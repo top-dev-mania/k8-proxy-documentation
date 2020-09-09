@@ -1,4 +1,6 @@
 # Glasswall IT and Infosec Documentation Site
+![CI](https://github.com/filetrust/glasswall-it-infosec-site/workflows/CI/badge.svg)
+![CD](https://github.com/filetrust/glasswall-it-infosec-site/workflows/CD/badge.svg)
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
