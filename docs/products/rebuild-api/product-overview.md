@@ -1,6 +1,6 @@
 ---
 title: Rebuild API
-sidebar_label: Overview
+sidebar_label: The Team
 ---
 
 The Rebuild API provides developers the pathway to obtaining safe and secure files. It combines the battle hardened capabilities of our Rebuild SDK with the scalability and performance of a cloud solution.

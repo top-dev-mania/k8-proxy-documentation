@@ -1,38 +1,48 @@
 module.exports = {
 	someSidebar: {
-		Products:
+		"About Us":
 			[
 				{
-					"Rebuild API": [
+					"IT Team": [
 						"products/rebuild-api/product-overview",
 						"products/rebuild-api/cloud-sdk-supported-types",
+						
+					
+					],
+				
+					"InfoSec Team": [
+						"products/rebuild-api/product-overview",
+						"products/rebuild-api/cloud-sdk-supported-types",
+					],
+
+					"Careers": [
+						"careers/rules-of-engagement",
 						{
-							"Rebuild": [
-								{
-									"AWS": [
-										"products/rebuild-api/rebuild/rebuild-quickstart",
-										{
-											"Code Samples": [
-												"products/rebuild-api/rebuild/code-samples/python-example",
-												"products/rebuild-api/rebuild/code-samples/nodejs-example",
-												"products/rebuild-api/rebuild/code-samples/csharp-example"
-											]
-										}
-									],
-								}
-							]
-						},
-						"products/rebuild-api/cloud-sdk-faq"
+							type: 'link',
+							label: "Work for Glasswall",
+							href: "http://careers.glasswallsolutions.com/"
+						}
 					]
 				}
+
 			],
-		"How-To's":
+		"IT Team":
 			[
 				{
-					"CI/CD": [
+					"Projects": [
 						"how-tos/ci-cd-pipeline"
 					]
 				}
-			]
+			],
+
+		"InfoSec Team":
+			[
+				{
+					"Projects": [
+						"how-tos/ci-cd-pipeline"
+					]
+				}
+			],
+		
 	},
 };
