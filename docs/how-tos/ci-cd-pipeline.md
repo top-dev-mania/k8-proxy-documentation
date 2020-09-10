@@ -1,7 +1,7 @@
 ---
 title: Set-up of CI/CD for GitHub Repository
 
-sidebar_label: CI/CD Setup
+sidebar_label: Project One Placeholder
 ---
 
 This guide will walk through the steps to set-up and create a CI/CD pipeline for your GitHub Repository

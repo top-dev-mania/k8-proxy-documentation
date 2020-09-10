@@ -8,32 +8,32 @@ import styles from "./styles.module.css";
 
 const features = [
   {
-    title: <>Products</>,
+    title: <>Glasswall IT and InfoSec Team</>,
     imageUrl: "img/product-illustration-01.png",
     imageLinkTo: "docs/products/rebuild-api/product-overview",
     description: (
       <>
-        Product descriptions with detailed information on features and benefits.
+        About our versatile and innovative team, upcoming recruitments and how to contact us.
       </>
     ),
   },
   {
-    title: <>Documentation</>,
+    title: <>IT Team</>,
     imageUrl: "img/documentation-illustration-02.png",
     imageLinkTo: "docs/product-descriptions/product-overview",
     description: (
       <>
-        Provides developers all information required to use Glasswall with example code in a variety of languages and step-by-step guides.
+        Check out our IT projects and activities.
       </>
     ),
   },
   {
-    title: <>Use Cases</>,
+    title: <>InfoSec Team</>,
     imageUrl: "img/use-cases-illustration-03.png",
     imageLinkTo: "docs/use-cases/overview",
     description: (
       <>
-        How can Glasswall help you? We've provided use cases that cover common scenarios.
+        Check out our InfoSec projects and activities.
       </>
     ),
   },

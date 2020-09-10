@@ -1,7 +1,7 @@
 ---
 title: Supported File Types
 id: cloud-sdk-supported-types
-sidebar_label: Supported File Types
+sidebar_label: Contact Us
 ---
 
 Here are all the different types of files the Glasswall Rebuild engine detects using the internal structure of files:
