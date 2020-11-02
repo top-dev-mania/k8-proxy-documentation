@@ -1,8 +1,8 @@
 module.exports = {
   title: "Glasswall Infosec and IT",
   tagline: "",
-  url: "https://filetrust.github.io",
-  baseUrl: "/glasswall-it-infosec-site/",
+  url: "https://k8-proxy.github.io",
+  baseUrl: "/k8-proxy-documentation/",
   favicon: "img/favicon.ico",
   organizationName: "filetrust", // Usually your GitHub org/user name.
   projectName: "glasswall-it-infosec-site", // Usually your repo name.
