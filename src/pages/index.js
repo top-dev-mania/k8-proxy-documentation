@@ -1,53 +1,51 @@
-import React from "react";
-import classnames from "classnames";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import styles from "./styles.module.css";
+import React from 'react';
+import clsx from 'clsx';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Glasswall IT and InfoSec Team</>,
-    imageUrl: "img/product-illustration-01.png",
-    imageLinkTo: "docs/products/rebuild-api/product-overview",
+    title: 'Easy to Use',
+    imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        About our versatile and innovative team, upcoming recruitments and how to contact us.
+        Docusaurus was designed from the ground up to be easily installed and
+        used to get your website up and running quickly.
       </>
     ),
   },
   {
-    title: <>IT Team</>,
-    imageUrl: "img/documentation-illustration-02.png",
-    imageLinkTo: "docs/product-descriptions/product-overview",
+    title: 'Focus on What Matters',
+    imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Check out our IT projects and activities.
+        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
+        ahead and move your docs into the <code>docs</code> directory.
       </>
     ),
   },
   {
-    title: <>InfoSec Team</>,
-    imageUrl: "img/use-cases-illustration-03.png",
-    imageLinkTo: "docs/use-cases/overview",
+    title: 'Powered by React',
+    imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Check out our InfoSec projects and activities.
+        Extend or customize your website layout by reusing React. Docusaurus can
+        be extended while reusing the same header and footer.
       </>
     ),
   },
 ];
 
-function Feature({ imageUrl, title, description, imageLinkTo }) {
+function Feature({imageUrl, title, description}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames("col col--4", styles.feature)}>
+    <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
         <div className="text--center">
-          <Link to={imageLinkTo}>
-            <img className={styles.featureImage} src={imgUrl} alt={title} />
-          </Link>
+          <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
       <h3>{title}</h3>
@@ -58,33 +56,29 @@ function Feature({ imageUrl, title, description, imageLinkTo }) {
 
 function Home() {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
+  const {siteConfig = {}} = context;
   return (
-    
     <Layout
-      title={`Glasswall`}
-      description="The online knowledge base for the Glasswall SDK."
-    >
-      <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet" />
-      <header className={classnames("hero hero--primary", styles.heroBanner)}>
+      title={`Hello from ${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />">
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
-              className={classnames(
-                "button button--outline button--secondary button--lg",
-                styles.getStarted
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
               )}
-              to={useBaseUrl("docs/products/cloud-sdk/rebuild/rebuild-quickstart")}
-            >
+              to={useBaseUrl('docs/dashboards/websites/production')}>
               Get Started
             </Link>
           </div>
         </div>
       </header>
       <main>
-        {features && features.length && (
+        {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
               <div className="row">
