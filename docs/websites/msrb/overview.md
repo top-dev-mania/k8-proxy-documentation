@@ -4,7 +4,7 @@ title: msrb Overview
 sidebar_label: msrbOverview
 ---
 
-see [Development Websites Dashboard for details](../../../dashboards/websites/production.md)
+see [Development Websites Dashboard for details](../../dashboards/websites/production.md)
 
 ## Installation Guide
 
