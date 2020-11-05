@@ -16,6 +16,7 @@ sidebar_label: Production
 ### SOW based ICAP servers:
 - icap01.glasswall-icap.com	54.155.107.189
 - icap02.glasswall-icap.com	34.240.204.39
+- Load balancer icap.glasswall-icap.com
 - Both running on port 1344
 
 ### DNS mappings:
