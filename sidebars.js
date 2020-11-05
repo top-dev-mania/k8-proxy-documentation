@@ -16,7 +16,7 @@ module.exports = {
 					"flavors/flavor-a/overview",					
 					"flavors/flavor-a/technical-architecture",	
 					"flavors/flavor-a/faq",	
-					"flavors/flavor-a/manual-setup",	
+					"flavors/flavor-a/manual-setup-aws",	
 					"flavors/flavor-a/automated-setup",	
 					"flavors/flavor-a/testing",					
 					{
