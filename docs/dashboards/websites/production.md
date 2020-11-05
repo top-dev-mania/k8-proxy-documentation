@@ -13,5 +13,19 @@ sidebar_label: Production
 | Xamarines sharepoint   |https://www.nekoffice.com.glasswall-icap.com/sites/gwtest/SitePages/Home.aspx | 54.169.155.88|A: K8s v0.1||Live in testing|[Xamarines sharepoint](https://github.com/k8-proxy/gp-sharepoint/issues)|
 
 
+### SOW based ICAP servers:
+- icap01.glasswall-icap.com	54.155.107.189
+- icap02.glasswall-icap.com	34.240.204.39
+- Both running on port 1344
+
+### DNS mappings:
+- gw-demo-sample-files-eu1.s3-eu-west-1.amazonaws.com.glasswall-icap.com : 54.170.84.172
+- www.glasswallsolutions.com.glasswall-icap.com : 54.78.209.23
+- *.gov.uk.glasswall-icap.com , assets.publishing.service.gov.uk.glasswall-icap.com , www.gov.uk.glasswall-icap.com : 51.11.8.179
+
+### Other notes:
+*Flavour A for Proxy & ICAP from Flavour E SOW v0.3 (October 28th)
+
+
 
 
