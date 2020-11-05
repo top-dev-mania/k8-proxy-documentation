@@ -38,8 +38,54 @@ module.exports = {
 		[
 			{					
 				"SharePoint": [	
-					"websites/sharepoint/cloud/overview",
-					"websites/sharepoint/self-hosted/overview",				
+					{
+						"cloud":
+						[
+							"websites/sharepoint/cloud/overview",
+							"websites/sharepoint/cloud/file-handler"
+						],
+						"self-hosted":
+						[
+							"websites/sharepoint/self-hosted/overview",
+							"websites/sharepoint/self-hosted/manual-install",
+							"websites/sharepoint/self-hosted/http-module",							
+						],	
+				"owasp": [	
+				"websites/owasp/overview",
+				],
+				"github": [	
+				"websites/github/overview",
+				],
+				"microsoft": [	
+				"websites/microsoft/overview",
+				],
+				"fortinet": [	
+				"websites/fortinet/overview",
+				],
+				"a10networks": [	
+				"websites/a10networks/overview",				
+				],
+				"bsigroup": [	
+				"websites/bsigroup/overview",			
+				],
+				"gwengineering": [	
+				"websites/gwengineering/overview",
+				],
+				"gwwebsite": [	
+				"websites/gwwebsite/overview",
+				],
+				"msrb": [	
+				"websites/msrb/overview",
+				],
+				"ukzones": [	
+				"websites/ukzones/overview",
+				],
+			},							
+		],	
+		"KB":
+			[									
+				"kb/style-guide",
+				"kb/website-checklist",					
 				],
 				"gov.uk": [	
 				"websites/gov.uk/overview",
