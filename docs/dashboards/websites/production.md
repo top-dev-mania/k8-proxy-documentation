@@ -13,6 +13,8 @@ sidebar_label: Production
 | Xamarines sharepoint   |https://www.nekoffice.com.glasswall-icap.com/sites/gwtest/SitePages/Home.aspx | 54.169.155.88|A: K8s v0.1||Live in testing|[Xamarines sharepoint](https://github.com/k8-proxy/gp-sharepoint/issues)|
 | fortinet.com|https://www.fortinet.com.glasswall-icap.com/|35.178.179.131|ICAP deployed||Live in testing|[Fortinet](https://github.com/k8-proxy/gp-fortinet-website)|
 | miniIO|https://min.io.glasswall-icap.com/||ICAP deployed||Live in testing|[MiniIO](https://github.com/k8-proxy/gp-v02-miniio)|
+| Atlasian |https://os-summit.atlassian.net.glasswall-icap.com/browse/TASK-145|3.139.5.226|SOW v0.2||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
+
 
 
 ### SOW based ICAP servers:
