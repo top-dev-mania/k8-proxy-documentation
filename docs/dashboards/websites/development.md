@@ -12,5 +12,4 @@ sidebar_label: Development
 | Medium|||Flavour A/Flavour E*||in Development|[Medium](https://github.com/k8-proxy/gp-medium-website)|
 | Atlasian |glasswall.atlassian.net||SOW v0.2||in Development|[JIRA](https://github.com/k8-proxy/gp-jira-website)|
 | GitHub.com |||SOW v0.3||in Development| [GitHub](https://github.com/k8-proxy/gp-github)|
-| Microsoft.com |||SOW v0.3||in Development|
 | bsigroup.com/en-GB |||SOW v0.3||in Development| [bsigroup](https://github.com/k8-proxy/gp-bsigroup-website)|
