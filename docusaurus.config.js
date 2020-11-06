@@ -8,6 +8,12 @@ module.exports = {
   projectName: "k8-proxy-documentation", // Usually your repo name.
   onBrokenLinks: 'log',
   themeConfig: {
+    algolia: {
+      apiKey: 'YOUR_API_KEY',
+      indexName: 'YOUR_INDEX_NAME',
+      contextualSearch: true,
+      searchParameters: {},
+    },
     navbar: {
       title: "K8 Proxy Documentation",
       logo: {

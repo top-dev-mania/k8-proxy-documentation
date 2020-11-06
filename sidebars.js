@@ -32,6 +32,29 @@ module.exports = {
 						]
 					}
 				],							
+			},
+			{
+				"Flavor OVA": [
+					"flavors/flavor-ova/overview",					
+					"flavors/flavor-ova/technical-architecture",	
+					"flavors/flavor-ova/faq",	
+					"flavors/flavor-ova/manual-setup-aws",	
+					"flavors/flavor-ova/manual-setup-azure",	
+					"flavors/flavor-ova/automated-setup",	
+					"flavors/flavor-ova/testing",					
+					{
+						"Release Notes" :
+						[
+							"flavors/flavor-ova/release-notes/history",
+							{
+								"0.x":
+								[
+									"flavors/flavor-ova/release-notes/0_x/0_1",
+								]
+							}							
+						]
+					}
+				],							
 			}
 		],
 		"Websites":
