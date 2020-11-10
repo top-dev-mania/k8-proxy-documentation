@@ -38,7 +38,7 @@ Extracted OVA file will give an extension \*.vmdk and \*.ovf file extension. Bet
 
   1. Open CMD on the machine and run below cmdlet.
 
-_VBoxManage.exe clonehd --format vhd "<vmdk file location>" "<desination--vhd file store location>"_
+_VBoxManage.exe clonehd --format vhd "/<vmdk file location/>" "/<desination--vhd file store location/>"_
 
 _Eg.__VBoxManage.exe clonehd --format vhd "C:\Users\Administrator\Downloads\glasswall-proxy-cb131a57ba2aff33ec5938a283bf3747dbe91ee1\glasswall-proxy-disk001.vmdk" "C:\Users\Administrator\Downloads\glasswall-proxy-cb131a57ba2aff33ec5938a283bf3747dbe91ee1\Glassproxy1.vhd_
 
@@ -152,7 +152,7 @@ _Connect-AzAccount_ (if you do have different subscription you need to use _Sele
 
     1. User below cmdlet to upload image into Azure Storage.
 
-Add-AzVhd -Destination "<blob storage location/vhdname.vhd"> -LocalFilePath "<local VHD location>" -ResourceGroupName "<name of resourcegroup>" -NumberofUploaderThreads 32
+Add-AzVhd -Destination "/<blob storage location/vhdname.vhd"/> -LocalFilePath "/<local VHD location/>" -ResourceGroupName "/<name of resourcegroup/>" -NumberofUploaderThreads 32
 
 ![](../../../static/img/docs/flavors/flavor-ova/manual-setup-azure/image026.png)
 
