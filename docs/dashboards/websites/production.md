@@ -12,8 +12,9 @@ sidebar_label: Production
 | owasp.org |https://owasp.org.glasswall-icap.com/|34.247.160.95|SOW v0.2|443|Live in testing|[OWASP](https://github.com/k8-proxy/gp-owasp-website)|
 | Sharepoint server 2019   |https://www.nekoffice.com.glasswall-icap.com/sites/gwtest/SitePages/Home.aspx | 54.169.155.88|A: K8s v0.1||Live in testing|[Xamarines sharepoint](https://github.com/k8-proxy/gp-sharepoint/issues)|
 | fortinet.com|https://www.fortinet.com.glasswall-icap.com/|35.178.179.131|ICAP deployed||Live in testing|[Fortinet](https://github.com/k8-proxy/gp-fortinet-website)|
-| miniIO|https://min.io.glasswall-icap.com/||ICAP deployed||Live in testing|[MiniIO](https://github.com/k8-proxy/gp-v02-miniio)|
-| Atlasian |https://os-summit.atlassian.net.glasswall-icap.com/browse/TASK-145|3.139.5.226|SOW v0.2||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
+| miniIO|https://min.io.glasswall-icap.com/|52.56.78.112|ICAP deployed||Live in testing|[MiniIO](https://github.com/k8-proxy/gp-v02-miniio)|
+| Atlasian |https://os-summit.atlassian.net.glasswall-icap.com/browse/TASK-145|3.139.5.226|ICAP deployed||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
+| bsigroup.com/en-GB |https://www.bsigroup.com.glasswall-icap.com/|34.222.23.193|ICAP deployed||Live in testing| [bsigroup](https://github.com/k8-proxy/gp-bsigroup-website)|
 
 
 
@@ -40,6 +41,7 @@ sidebar_label: Production
 - gw-demo-sample-files-eu1.s3-eu-west-1.amazonaws.com.glasswall-icap.com : 54.170.84.172
 - www.glasswallsolutions.com.glasswall-icap.com : 54.78.209.23
 - *.gov.uk.glasswall-icap.com , assets.publishing.service.gov.uk.glasswall-icap.com , www.gov.uk.glasswall-icap.com : 51.11.8.179
+- For owasp: cse.google.com.glasswall-icap.com - 34.247.160.95 and google.com.glasswall-icap.com - 34.247.160.95
 
 ### Other notes:
 *Flavour A for Proxy & ICAP from Flavour E SOW v0.3 (October 28th)
