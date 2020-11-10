@@ -3,12 +3,14 @@ title: Flavor OVA Overview
 sidebar_label: Overview
 ---
 
-[Release Notes](../flavor-a/release-notes/history.md)
+[Release Notes](release-notes/history.md)
 
-[Architecture](../flavor-a/technical-architecture.md)
+[Architecture](technical-architecture.md)
 
-[Manual Setup](../flavor-a/manual-setup.md)
+[Manual Setup AWS](manual-setup-aws.md)
 
-[Automated Setup](../flavor-a/automated-setup.md)
+[Manual Setup Azure](manual-setup-azure.md)
 
-[FAQ](../flavor-a/faq.md)
+[Automated Setup](automated-setup.md)
+
+[FAQ](faq.md)
