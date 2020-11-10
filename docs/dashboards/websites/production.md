@@ -17,6 +17,19 @@ sidebar_label: Production
 
 
 
+### Live websites with local DNS changes
+| Website  | Outcome URL | IP | Flavor | Ports opened | Status | Repo | OS | Infrastructure | Provisioning | Container engine | Doc | Team |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Internal sharepoint |saaspoc1.sharepoint.com|3.249.61.168|||Live in testing|[Internal sharepoint](gp-b-docker-v01-sharepoint)|
+| Atlasian |os-summit.atlassian.net|20.56.152.40|||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
+| Atlasian |glasswall.atlassian.net|20.56.152.40|||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
+| Atlasian |api.media.atlassian.net|20.56.152.40|||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
+
+
+
+
+
+
 ### SOW based ICAP servers:
 - icap01.glasswall-icap.com	54.155.107.189
 - icap02.glasswall-icap.com	34.240.204.39
