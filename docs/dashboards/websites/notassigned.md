@@ -8,5 +8,4 @@ sidebar_label: Not assigned sites
 | a10networks.com |||ICAP deployed||Not assigned|
 | glasswallsolutions.com.glasswall-icap.com |||ICAP deployed||Not assigned|
 | F5.com |||ICAP deployed||Not assigned|
-| microsoft.com |||ICAP deployed||Not assigned|
 | nhs.uk/|||ICAP deployed||Not assigned|
