@@ -15,6 +15,8 @@ sidebar_label: Production
 | miniIO|https://min.io.glasswall-icap.com/|52.56.78.112|ICAP deployed||Live in testing|[MiniIO](https://github.com/k8-proxy/gp-v02-miniio)|
 | Atlasian |https://os-summit.atlassian.net.glasswall-icap.com/browse/TASK-145|3.139.5.226|ICAP deployed||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
 | bsigroup.com/en-GB |https://www.bsigroup.com.glasswall-icap.com/|34.222.23.193|ICAP deployed||Live in testing| [bsigroup](https://github.com/k8-proxy/gp-bsigroup-website)|
+| ajbell.co.uk. |www.ajbell.co.uk.glasswall-icap.com |18.132.32.66|Flavour B|Live in testing| [ajbell](https://github.com/k8-proxy/gp-ajbell-website)|
+
 
 
 
