@@ -7,7 +7,7 @@ sidebar_label: Overview
 
 [Architecture](../flavor-a/technical-architecture.md)
 
-[Manual Setup](../flavor-a/manual-setup.md)
+[Manual Setup](../flavor-a/manual-setup-aws.md)
 
 [Automated Setup](../flavor-a/automated-setup.md)
 
