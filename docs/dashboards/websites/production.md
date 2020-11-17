@@ -15,6 +15,9 @@ sidebar_label: Production
 | miniIO|https://min.io.glasswall-icap.com/|52.56.78.112|ICAP deployed||Live in testing|[MiniIO](https://github.com/k8-proxy/gp-v02-miniio)|
 | Atlasian |https://os-summit.atlassian.net.glasswall-icap.com/browse/TASK-145|3.139.5.226|ICAP deployed||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
 | bsigroup.com/en-GB |https://www.bsigroup.com.glasswall-icap.com/|34.222.23.193|ICAP deployed||Live in testing| [bsigroup](https://github.com/k8-proxy/gp-bsigroup-website)|
+| Mastercard|https://www.mastercard.co.uk.glasswall-icap.com/en-gb.html|18.216.36.55|ICAP deployed||Live in testing| [mastercard](https://github.com/k8-proxy/gp-mastercard-website)|
+| Adarma|http://www.adarma.com.glasswall-icap.com/|54.244.172.39|ICAP deployed||Live in testing| [adarma](https://github.com/k8-proxy/gp-adarma-website)|
+
 
 
 
@@ -34,7 +37,10 @@ sidebar_label: Production
 ### SOW based ICAP servers:
 - icap01.glasswall-icap.com	54.155.107.189
 - icap02.glasswall-icap.com	34.240.204.39
-- Load balancer icap.glasswall-icap.com
+- 3.129.78.231
+- 3.139.106.69
+- Load balancer icap.glasswall-icap.com - 54.77.168.168
+- Load balancer 3.139.22.215
 - Both running on port 1344
 
 ### DNS mappings:
