@@ -20,10 +20,7 @@ sidebar_label: Manual Setup (AWS)
 2. In **Create Resource Group**, select Tag Based.
 3. Add two tags with: 
     ![step3](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/aws-resource-group/step3.png)
-    1. Key rg-gw-dev and name rancher
-    2. Key rg-gw-dev and name k8s-node
-    3. Key rg-gw-dev and name rancher-user
-    4. Key rg-gw-dev and name ecr-user
+    1. Key rg-gw-dev leave optional tag value blank
 4. These will be used later when creating EC2 instances for rancher and k8s
     ![step4](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/aws-resource-group/step4.png)
 5. Add group name then choose **Create Group**
@@ -45,7 +42,10 @@ sidebar_label: Manual Setup (AWS)
  ![step332](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/ec2-for-rancher/step332.png)
 7. In **Step 4: Add Storage**, change size to 30GB then choose **Next: Add Tags**
  ![step34](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/ec2-for-rancher/step34.png)
-8. In **Step 5: Add Tags**, add a tag with key rg-gw-dev and name rancher i.e the tag we added in our Resource Group. The tag should match the one you created in Resource Group since we are using Resource Group based on tags. Choose **Next: Configure Security Group**
+8. In **Step 5: Add Tags**, add a tags. 
+      1. with **key rg-gw-dev and name rancher** i.e the tag we added in our Resource Group. The tag should match the one you created in Resource Group since we are using Resource Group based on tags
+      2. with **key Name and name rancher**
+   Choose **Next: Configure Security Group**
  ![step35](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/ec2-for-rancher/step35.png)
 9. In **Step 6: Configure Security Group**, select Create a new security group if not previously created. Give the name and description for the security group. Leave everything to default and choose **Next: Review Instance Launch**
  ![step36](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/ec2-for-rancher/step36.png)
@@ -78,7 +78,7 @@ The public ip AWS assings isn't persistent and will change everytime you shutdow
    ![step4](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/host/step4.png)
 5.  Then we need to create an A record for the Rancher instance. Click on **Create Record Set**
    ![step5](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/host/step5.png)
-6.  Add a subdomain or leave it blank. Select **Type: A - IPv4 address** if not previously selected and type in the Elastic IP retrieved from https://github.com/my-stolen-username/flavour-A-aws-setup#associate-elastic-ip-to-rancher-instance  in **value**.
+6.  Add a subdomain or leave it blank. Select **Type: A - IPv4 address** if not previously selected and type in the Elastic IP retrieved from https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#associate-elastic-ip-to-rancher-instance  in **value**.
    ![step6](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/host/step6.png)
 7. Click on **Create**
 8. Select the newly created a record and Click on **Test Record Set** to check if the record is working or not.
@@ -110,10 +110,10 @@ The public ip AWS assings isn't persistent and will change everytime you shutdow
 ## Setting up Rancher
 ### Before following the Rancher Docs
 It is highly advised to have a domain for the Rancher instance or you'll be facing tons of issues.
-Use the **Access key id** and **Secret access Key** that was retrieved in https://github.com/my-stolen-username/flavour-A-aws-setup#iam-user-for-rancher when Rancher asks for it.
+Use the **Access key id** and **Secret access Key** that was retrieved in https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#iam-user-for-rancher when Rancher asks for it.
 After you have everything required follow the steps below:
-1. SSH to Rancher instance using the keypair that you retrieved from https://github.com/my-stolen-username/flavour-A-aws-setup#setting-up-aws-ec2-instance-for-rancher-for-flavour-a
-    
+1. SSH to Rancher instance using the keypair that you retrieved from https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-aws-ec2-instance-for-rancher-for-flavour-a
+  
 2. Install docker
    ```
    sudo apt-get update
@@ -138,7 +138,7 @@ After you have everything required follow the steps below:
     sudo a2enmod rewrite 
     sudo systemctl restart apache2
    ```
-5. Edit the vhost conf file. Replace the  your-rancher-domain with domain configure in https://github.com/my-stolen-username/flavour-A-aws-setup#setting-up-route-53-for-rancher-instance 
+5. Edit the vhost conf file. Replace the  your-rancher-domain with domain configure in https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-route-53-for-rancher-instance 
    ```
    sudo vi /etc/apache2/sites-available/000-default.conf
    ```
@@ -177,8 +177,49 @@ After you have everything required follow the steps below:
    sudo certbot --apache
    ```
 8. Select the domain that you added in your vhost
-9. Open your rancher domain and follow from step 2. from the link https://github.com/k8-proxy/s-k8-proxy-rebuild/blob/master/stable-src/README.md#installation-steps-to-deploy-k8s-cluster-on-ec2-instances-using-rancher
-10. A new instance will be created in EC2 instance console.
+
+   **If you don't want the IP to change everytime the instance gets rebooted or shutdown then Elastic IP is recommended.**
+   ### For instance with dynamic public IP
+      1. Open your rancher domain and follow from step 2. from the link https://github.com/k8-proxy/s-k8-proxy-rebuild/blob/master/stable-src/README.md#installation-steps-to-deploy-k8s-cluster-on-ec2-instances-using-rancher
+      2. A new instance will be created in EC2 instance console.
+   ### For instance with Elastic IP(Recommended)
+      1. Follow these steps but instead of rancher, it's for Flavour A. So change the tags from **rg-gw-dev: rancher** and **Name: rancher** to
+         **Name: Flavour-a** and **rg-gw-dev: Flavour-a** 
+         #### Important
+         When in the **Security Group** section don't forget to open up the required ports for Rancher. https://rancher.com/docs/rancher/v2.x/en/installation/requirements/ports/
+         ![port1](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/port/port1.png)
+         ![port2](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/port/port2.png)
+
+
+         1. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-aws-ec2-instance-for-rancher-for-flavour-a
+         2. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#associate-elastic-ip-to-rancher-instance
+      2. Open your rancher domain.
+      3. Select **Add Cluster**
+      4. Select **Existing Node**
+      5. Name the Cluster rg-gw-dev-flavour-a
+      6. In **In-Tree Cloud Provide**, choose **Custom**
+         ![step6](./img/rancher/step6.png)
+
+      7. Click on **Next**
+      8. Select **etcd**, **Control Plane**, **Worker**
+         ![step8](./img/rancher/step8.png)
+         
+      9. Click on **Show advanced options**
+      10. Enter the **Node Public Address**(Elastic IP), **Node Internal Address**(Private IPv4 addresses), **Node Name**(The value you added in as Name as tag when creating the EC2 instance eg. if you have a key Name and the value is set to flavour-a, use flavour-a), which can be found in instance details tab when you select the newly created instance in the EC2 console.
+         ![step10](./img/rancher/step10.png)
+      11. Copy the docker command.
+      11. SSH to the instance using the keypair that you retrieved in step 1.
+      12. Install docker
+         ```
+         sudo apt-get update
+         sudo apt-get install apt-transport-https  ca-certificates  curl  gnupg-agent software-properties-common
+         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+         sudo apt-key fingerprint 0EBFCD88
+         sudo apt-get update
+         sudo apt-get install docker-ce docker-ce-cli containerd.io
+         ```
+      13. Paste the command and run.
+      14. Go to your rancher console and select done.
 
 ## Creating an IAM user for Docker Repository 
 1. Open the IAM user console http://console.aws.amazon.com/iam
@@ -239,6 +280,33 @@ After you have everything required follow the steps below:
 14. Review then choose **Create User**
 15. Download the CSV or save the Access key ID and Secret access key which will be used later for rancher
 16. Close
+
+## Adding Tags to Security Group and k8s EC2 Instance for AWS Resource Group
+### Adding tags to Security Group
+1. Open the EC2 console https://console.aws.amazon.com/ec2/
+2. Select **Security Groups**
+3. Select a security group
+4. Click on **Tags** at the bottom right.
+   ![step4](./img/tags/step4.png)
+5. Click on **Manage tags**.
+6. Click on **Add tags** and add a tag
+   ![step4](./img/tags/step6.png)
+7. Click on **Save Changes**
+Do the above step for all security group
+### Adding tags to Security Group
+1. Open the EC2 console https://console.aws.amazon.com/ec2/
+2. Select **Instances**
+3. Select a EC2 instance
+4. Click on **Tags** at the bottom right.
+
+   ![step4](./img/tags/step4.png)
+5. Click on **Manage tags**.
+6. Click on **Add tags** and add a tag
+
+   ![step4](./img/tags/step6b.png)
+7. Click on **Save Changes**
+Do the above step for all security group
+
 
 
 ## Setting up Repository for Docker in AWS
@@ -314,7 +382,165 @@ This setup assumes that the nginx, squid and icap applications are in the same r
     git clone https://github.com/k8-proxy/s-k8-proxy-rebuild.git
     cd stable-src
     ```
-12. Run the helm command
+12. Edit the values.yaml in chart folder and add paste the following then replace the docker-registry-url
+    ```
+         # Default values for chart.
+      # This is a YAML-formatted file.
+      # Declare variables to be passed into your templates.
+      replicaCount: 1
+      image:
+      nginx:
+         repository: <docker-registry-url>
+         tag: nginx-0.0.2
+         pullPolicy: IfNotPresent
+      squid:
+         repository: <docker-registry-url>
+         tag: squid-reverse-0.0.2
+         pullPolicy: IfNotPresent
+      icap:
+         repository: <docker-registry-url>
+         tag: gw-icap-0.0.2
+         pullPolicy: IfNotPresent
+      podAnnotations: {}
+      application:
+      nginx:
+         secretName: reverse-proxy-nginx
+         env:
+            ALLOWED_DOMAINS: gov.uk.glasswall-icap.com,www.gov.uk.glasswall-icap.com,assets.publishing.service.gov.uk.glasswall-icap.com,www.nekoffice.com.glasswall-icap.com,nekoffice.com.glasswall-icap.com,xamariners.sharepoint.com.glasswall-icap.com,glasswallk8.sharepoint.com.glasswall-icap.com,login.microsoftonline.com.glasswall-icap.com,aadcdn.msauth.net.glasswall-icap.com,login.windows.net.glasswall-icap.com,aadcdn.msftauth.net.glasswall-icap.com,mysigns.microsoft.com.glasswall-icap.com,account.activedirectory.windowsazure.com.glasswall-icap.com,shell.cdn.office.net.glasswall-icap.com,spoprod-a.akamaihd.net.glasswall-icap.com,browser.pipe.aria.microsoft.com.glasswall-icap.com,amcdn.msftauth.net.glasswall-icap.com,r4.res.office365.com.glasswall-icap.com,substrate.office.com.glasswall-icap.com,lpcres.delve.office.com.glasswall-icap.com,webshell.suite.office.com.glasswall-icap.com,loki.delve.office.com.glasswall-icap.com,mysignins.microsoft.com.glasswall-icap.com,static2.sharepointonline.com.glasswall-icap.com
+            ROOT_DOMAIN: glasswall-icap.com
+            SUBFILTER_ENV: ".gov.uk,.gov.uk.glasswall-icap.com  .amazonaws.com,.amazonaws.com.glasswall-icap.com .nekoffice.com,.nekoffice.com.glasswall-icap.com .xamariners.sharepoint.com,.xamariners.sharepoint.com.glasswall-icap.com .glasswallk8.sharepoint.com,.glasswallk8.sharepoint.com.glasswall-icap.com .login.microsoftonline.com,.login.microsoftonline.com.glasswall-icap.com .aadcdn.msauth.net,.aadcdn.msauth.net.glasswall-icap.com .login.windows.net,.login.windows.net.glasswall-icap.com .aadcdn.msftauth.net,.aadcdn.msftauth.net.glasswall-icap.com .mysigns.microsoft.com,.mysigns.microsoft.com.glasswall-icap.com .account.activedirectory.windowsazure.com,.account.activedirectory.windowsazure.com.glasswall-icap.com .shell.cdn.office.net,.shell.cdn.office.net.glasswall-icap.com .spoprod-a.akamaihd.net,.spoprod-a.akamaihd.net.glasswall-icap.com .browser.pipe.aria.microsoft.com,.browser.pipe.aria.microsoft.com.glasswall-icap.com .amcdn.msftauth.net,.amcdn.msftauth.net.glasswall-icap.com .r4.res.office365.com,.r4.res.office365.com.glasswall-icap.com .substrate.office.com,.substrate.office.com.glasswall-icap.com .lpcres.delve.office.com,.lpcres.delve.office.com.glasswall-icap.com .webshell.suite.office.com,.webshell.suite.office.com.glasswall-icap.com .loki.delve.office.com,.loki.delve.office.com.glasswall-icap.com .mysignins.microsoft.com,.mysignins.microsoft.com.glasswall-icap.com .static2.sharepointonline.com,.static2.sharepointonline.com.glasswall-icap.com"
+         secrets: {}
+      squid:
+         secretName: reverse-proxy-squid
+         env:
+            ALLOWED_DOMAINS: gov.uk.glasswall-icap.com,www.gov.uk.glasswall-icap.com,assets.publishing.service.gov.uk.glasswall-icap.com,www.nekoffice.com.glasswall-icap.com,nekoffice.com.glasswall-icap.com,xamariners.sharepoint.com.glasswall-icap.com,glasswallk8.sharepoint.com.glasswall-icap.com,login.microsoftonline.com.glasswall-icap.com,aadcdn.msauth.net.glasswall-icap.com,login.windows.net.glasswall-icap.com,aadcdn.msftauth.net.glasswall-icap.com,mysigns.microsoft.com.glasswall-icap.com,account.activedirectory.windowsazure.com.glasswall-icap.com,shell.cdn.office.net.glasswall-icap.com,spoprod-a.akamaihd.net.glasswall-icap.com,browser.pipe.aria.microsoft.com.glasswall-icap.com,amcdn.msftauth.net.glasswall-icap.com,r4.res.office365.com.glasswall-icap.com,substrate.office.com.glasswall-icap.com,lpcres.delve.office.com.glasswall-icap.com,webshell.suite.office.com.glasswall-icap.com,loki.delve.office.com.glasswall-icap.com,mysignins.microsoft.com.glasswall-icap.com,static2.sharepointonline.com.glasswall-icap.com
+            ROOT_DOMAIN: glasswall-icap.com
+         secrets: {}
+      icap:
+         secretName: reverse-proxy-icap
+         env: {}
+         secrets: {}
+
+      service:
+      nginx:
+         enabled: true
+         annotations: {}
+         name: nginx
+         type: ClusterIP
+         additionalHosts:
+         - glasswallk8.sharepoint.com.glasswall-icap.com
+         - login.microsoftonline.com.glasswall-icap.com
+         - aadcdn.msauth.net.glasswall-icap.com
+         - login.windows.net.glasswall-icap.com
+         - aadcdn.msftauth.net.glasswall-icap.com
+         - mysigns.microsoft.com.glasswall-icap.com
+         - account.activedirectory.windowsazure.com.glasswall-icap.com
+         - shell.cdn.office.net.glasswall-icap.com
+         - spoprod-a.akamaihd.net.glasswall-icap.com
+         - browser.pipe.aria.microsoft.com.glasswall-icap.com
+         - amcdn.msftauth.net.glasswall-icap.com
+         - r4.res.office365.com.glasswall-icap.com
+         - substrate.office.com.glasswall-icap.com
+         - lpcres.delve.office.com.glasswall-icap.com
+         - webshell.suite.office.com.glasswall-icap.com
+         - loki.delve.office.com.glasswall-icap.com
+         - mysignins.microsoft.com.glasswall-icap.com
+         - static2.sharepointonline.co.glasswall-icap.com
+         - xamariners.sharepoint.com.glasswall-icap.com
+         - www.nekoffice.com.glasswall-icap.com
+         - www.gov.uk.glasswall-icap.com
+         - assets.publishing.service.gov.uk.glasswall-icap.com
+         commonName:
+         externalPort: 443
+         internalPort: 443
+         url: gov.uk.glasswall-icap.com
+      squid:
+         enabled: true
+         annotations: {}
+         name: squid
+         type: ClusterIP
+         additionalHosts:
+         externalPort: 8080
+         internalPort: 8080
+      icap:
+         enabled: true
+         annotations: {}
+         name: icap
+         type: ClusterIP
+         additionalHosts:
+         externalPort: 1344
+         internalPort: 1344
+      ingress:
+      enabled: true
+      tls:
+         enabled: true
+         secretName: secret-tls-nekoffice
+      annotations:
+         nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+         nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+         kubernetes.io/ingress.class: "nginx"
+      path: /
+      livenessProbe:
+      path: "/"
+      initialDelaySeconds: 30
+      timeoutSeconds: 3
+      scheme: "HTTP"
+      readinessProbe:
+      path: "/"
+      initialDelaySeconds: 30
+      timeoutSeconds: 3
+      scheme: "HTTP"
+
+      resources:
+      nginx:
+         limits:
+            cpu: 250m
+            memory: 250Mi
+         requests:
+            cpu: 250m
+            memory: 250Mi
+      squid:
+         limits:
+            cpu: 250m
+            memory: 500Mi
+         requests:
+            cpu: 250m
+            memory: 500Mi
+      icap:
+         limits:
+            cpu: 500m
+            memory: 500Mi
+         requests:
+            cpu: 500m
+            memory: 500Mi
+
+      #
+      podDisruptionBudget:
+      enabled: false
+      # minAvailable: 1
+      maxUnavailable: 1
+      scale:
+      nginx:
+         enabled: false
+         MinReplicaCount: 1
+         MaxReplicaCount: 2
+      squid:
+         enabled: false
+         MinReplicaCount: 1
+         MaxReplicaCount: 2
+      icap:
+         enabled: false
+         MinReplicaCount: 1
+         MaxReplicaCount: 2
+    ```
+    ```
+     vi chart/values.yaml
+    ``` 
+13. Edit the /etc/hosts and replace the k8s-cluster-ip. You'll find the ip for your k8s node on the EC2 instance console.
+    ```
+     <k8s-cluster-ip> gov.uk.glasswall-icap.com www.gov.uk.glasswall-icap.com assets.publishing.service.gov.uk.glasswall-icap.com www.nekoffice.com.glasswall-icap.com  nekoffice.com.glasswall-icap.com  xamariners.sharepoint.com.glasswall-icap.com  glasswallk8.sharepoint.com.glasswall-icap.com  login.microsoftonline.com.glasswall-icap.com  aadcdn.msauth.net.glasswall-icap.com  login.windows.net.glasswall-icap.com  aadcdn.msftauth.net.glasswall-icap.com  mysigns.microsoft.com.glasswall-icap.com  account.activedirectory.windowsazure.com.glasswall-icap.com  shell.cdn.office.net.glasswall-icap.com  spoprod-a.akamaihd.net.glasswall-icap.com  browser.pipe.aria.microsoft.com.glasswall-icap.com  amcdn.msftauth.net.glasswall-icap.com  r4.res.office365.com.glasswall-icap.com  substrate.office.com.glasswall-icap.com  lpcres.delve.office.com.glasswall-icap.com  webshell.suite.office.com.glasswall-icap.com  loki.delve.office.com.glasswall-icap.com  mysignins.microsoft.com.glasswall-icap.com  static2.sharepointonline.com.glasswall-icap.com
+    ```
+14. Run the helm command
     ```
     helm upgrade --install \
       --set image.nginx.repository=<docker-registry-url> \
