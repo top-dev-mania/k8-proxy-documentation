@@ -17,6 +17,7 @@ sidebar_label: Production
 | bsigroup.com/en-GB |https://www.bsigroup.com.glasswall-icap.com/|34.222.23.193|ICAP deployed||Live in testing| [bsigroup](https://github.com/k8-proxy/gp-bsigroup-website)|
 | Mastercard|https://www.mastercard.co.uk.glasswall-icap.com/en-gb.html|18.216.36.55|ICAP deployed||Live in testing| [mastercard](https://github.com/k8-proxy/gp-mastercard-website)|
 | Adarma|http://www.adarma.com.glasswall-icap.com/|54.244.172.39|ICAP deployed||Live in testing| [adarma](https://github.com/k8-proxy/gp-adarma-website)|
+| microsoft.com |https://www.microsoft.com.glasswall-icap.com/|18.157.111.73|ICAP deployed||Live in testing| [Microsoft](https://github.com/k8-proxy/gp-microsoft-website)|
 
 
 
