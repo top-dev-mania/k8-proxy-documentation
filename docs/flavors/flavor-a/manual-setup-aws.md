@@ -287,10 +287,10 @@ After you have everything required follow the steps below:
 2. Select **Security Groups**
 3. Select a security group
 4. Click on **Tags** at the bottom right.
-   ![step4](./img/tags/step4.png)
+   ![step4](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/tags/step4.png)
 5. Click on **Manage tags**.
 6. Click on **Add tags** and add a tag
-   ![step4](./img/tags/step6.png)
+   ![step4](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/tags/step6.png)
 7. Click on **Save Changes**
 Do the above step for all security group
 ### Adding tags to Security Group
@@ -299,11 +299,11 @@ Do the above step for all security group
 3. Select a EC2 instance
 4. Click on **Tags** at the bottom right.
 
-   ![step4](./img/tags/step4.png)
+   ![step4](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/tags/step4.png)
 5. Click on **Manage tags**.
 6. Click on **Add tags** and add a tag
 
-   ![step4](./img/tags/step6b.png)
+   ![step4](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/tags/step6b.png)
 7. Click on **Save Changes**
 Do the above step for all security group
 
