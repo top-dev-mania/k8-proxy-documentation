@@ -11,7 +11,7 @@ https://github.com/k8-proxy/gp-owasp-website/blob/main/sow2_0/README.md
 https://github.com/k8-proxy/gp-owasp-website
 
 ### Flavor Setup
-
+Flavour E
 
 ### Manual Website Setup
 https://github.com/k8-proxy/gp-owasp-website/blob/main/sow2_0/README.md
