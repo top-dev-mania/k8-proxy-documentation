@@ -20,7 +20,13 @@ module.exports = {
           activeBasePath: "docs",
           label: "Documentation",
           position: "left",
-        },       
+        }, 
+        {
+          to: "proxyDocumentation",
+          activeBasePath: "./",
+          label: "Proxy WebSite",
+          position: "left",
+        },            
         {
           href: "https://github.com/k8-proxy",
           label: "GitHub",
