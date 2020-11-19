@@ -11,10 +11,14 @@ sidebar_label: Production
 | UK Zones  | https://uk.zones.com.glasswall-icap.com | 54.78.104.24 |B: Docker v0.1| 443 | Live in testing |[UK zones](https://github.com/k8-proxy/gp-uk-zones-com)|
 | owasp.org |https://owasp.org.glasswall-icap.com/|34.247.160.95|SOW v0.2|443|Live in testing|[OWASP](https://github.com/k8-proxy/gp-owasp-website)|
 | Sharepoint server 2019   |https://www.nekoffice.com.glasswall-icap.com/sites/gwtest/SitePages/Home.aspx | 54.169.155.88|A: K8s v0.1||Live in testing|[Xamarines sharepoint](https://github.com/k8-proxy/gp-sharepoint/issues)|
-| fortinet.com|https://www.fortinet.com.glasswall-icap.com/|35.178.179.131|ICAP deployed||Live in testing|[Fortinet](https://github.com/k8-proxy/gp-fortinet-website)|
+| fortinet.com|https://www.fortinet.com.glasswall-icap.com/|18.156.64.216|ICAP deployed||Live in testing|[Fortinet](https://github.com/k8-proxy/gp-fortinet-website)|
 | miniIO|https://min.io.glasswall-icap.com/|52.56.78.112|ICAP deployed||Live in testing|[MiniIO](https://github.com/k8-proxy/gp-v02-miniio)|
 | Atlasian |https://os-summit.atlassian.net.glasswall-icap.com/browse/TASK-145|3.139.5.226|ICAP deployed||Live in testing|[JIRA](https://github.com/k8-proxy/gp-jira-website)|||
 | bsigroup.com/en-GB |https://www.bsigroup.com.glasswall-icap.com/|34.222.23.193|ICAP deployed||Live in testing| [bsigroup](https://github.com/k8-proxy/gp-bsigroup-website)|
+| Mastercard|https://www.mastercard.co.uk.glasswall-icap.com/en-gb.html|18.216.36.55|ICAP deployed||Live in testing| [mastercard](https://github.com/k8-proxy/gp-mastercard-website)|
+| Adarma|http://www.adarma.com.glasswall-icap.com/|54.244.172.39|ICAP deployed||Live in testing| [adarma](https://github.com/k8-proxy/gp-adarma-website)|
+| microsoft.com |https://www.microsoft.com.glasswall-icap.com/|18.157.111.73|ICAP deployed||Live in testing| [Microsoft](https://github.com/k8-proxy/gp-microsoft-website)|
+
 
 
 
@@ -34,7 +38,10 @@ sidebar_label: Production
 ### SOW based ICAP servers:
 - icap01.glasswall-icap.com	54.155.107.189
 - icap02.glasswall-icap.com	34.240.204.39
-- Load balancer icap.glasswall-icap.com
+- 3.129.78.231
+- 3.139.106.69
+- Load balancer icap.glasswall-icap.com - 54.77.168.168
+- Load balancer 3.139.22.215
 - Both running on port 1344
 
 ### DNS mappings:
