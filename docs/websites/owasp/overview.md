@@ -22,8 +22,8 @@ https://github.com/k8-proxy/gp-owasp-website/blob/main/sow2_0/README.md
 5. Replcae nginx/full.pem ../../gp-owasp-website/sow2_0/full.pem (gp-owasp-website is cloned in step 2)
 6. Build images for squid and nginx. Optionally Images can be pushed to docker repository as well.
     ```
-    docker build nginx -t <docker registry>/reverse-proxy-nginx:0.0.1
-    docker build squid -t <docker registry>/reverse-proxy-squid:0.0.1
+    docker build nginx -t [docker registry]/reverse-proxy-nginx:0.0.1
+    docker build squid -t [docker registry]/reverse-proxy-squid:0.0.1
 
 7. git clone https://github.com/k8-proxy/s-k8-proxy-rebuild.git && cd s-k8-proxy-rebuild/stable-src/  
 
@@ -57,7 +57,7 @@ https://github.com/k8-proxy/gp-owasp-website/blob/main/sow2_0/README.md
 ## Verify the installation
 
 1. kubectl get ing -n icap-adaptation (copy the name of ingress name)
-2. kubectl -n icap-adaptation edit ing <ingress_name_from_step1>
+2. kubectl -n icap-adaptation edit ing [ingress_name_from_step1]
 3. check spec->rules->host  and spec->tls->hosts check the entries here
 4. kubectl get deployments -n icap-adaptation
 5. verify nginx/squid deployment configuration i.e spec->containers->env . properties to check ICAP_URL, ALLOWED_DOMAINS, and SUBFILTER_ENV
@@ -66,7 +66,7 @@ https://github.com/k8-proxy/gp-owasp-website/blob/main/sow2_0/README.md
 ## Installation with local deployed icap server
 
  1. kubectl create namespace icap-adaptation
- 2. kubectl create -n icap-adaptation secret docker-registry regcred --docker-server='https://index.docker.io/v1/' --docker-username=<username> --docker-password=<passwd> --docker-email=email
+ 2. kubectl create -n icap-adaptation secret docker-registry regcred --docker-server='https://index.docker.io/v1/' --docker-username=[username] --docker-password=[passwd] --docker-email=email
  3. git clone https://github.com/anejaalekh/gp-owasp-website.git
  4. cd gp-owasp-website/sow2_0/adaptation/
  5. helm install . --namespace icap-adaptation --generate-name
@@ -79,15 +79,15 @@ https://github.com/k8-proxy/gp-owasp-website/blob/main/sow2_0/README.md
  9. Replcae nginx/full.pem ../../gp-owasp-website/sow2_0/full.pem (gp-owasp-website is cloned in step 3)
  9. Build reverse proxy images
  
-		 docker build nginx -t <docker registry>/reverse-proxy-nginx:0.0.1
-		 docker push <docker registry>/reverse-proxy-nginx:0.0.1  # Optional
+		 docker build nginx -t [docker registry]/reverse-proxy-nginx:0.0.1
+		 docker push [docker registry]/reverse-proxy-nginx:0.0.1  # Optional
 
-		 docker build squid -t <docker registry>/reverse-proxy-squid:0.0.1
-		 docker push <docker registry>/reverse-proxy-squid:0.0.1 # Optional
+		 docker build squid -t [docker registry]/reverse-proxy-squid:0.0.1
+		 docker push [docker registry]/reverse-proxy-squid:0.0.1 # Optional
 
 		 wget -O c-icap/Glasswall-Rebuild-SDK-Evaluation/Linux/Library/libglasswall.classic.so https://github.com/filetrust/Glasswall-Rebuild-SDK-Evaluation/releases/download/1.117/libglasswall.classic.so
-		 docker build c-icap -t <docker registry>/reverse-proxy-c-icap:0.0.1
-		 docker push <docker registry>/reverse-proxy-c-icap:0.0.1  # Optional
+		 docker build c-icap -t [docker registry]/reverse-proxy-c-icap:0.0.1
+		 docker push [docker registry]/reverse-proxy-c-icap:0.0.1  # Optional
  10. kubectl -n icap-adaptation get svc | grep icap-service, save this value 
  
  **Install Reverse Proxy**
@@ -97,11 +97,11 @@ https://github.com/k8-proxy/gp-owasp-website/blob/main/sow2_0/README.md
  13. Install nginx, squid reverse proxy 
  
 	helm --namespace icap-adaptation upgrade --install \
-	  --set image.nginx.repository=<docker registry>/reverse-proxy-nginx \
+	  --set image.nginx.repository=[docker registry]/reverse-proxy-nginx \
 	  --set image.nginx.tag=0.0.1 \
-	  --set image.squid.repository=<docker registry>/reverse-proxy-squid \
+	  --set image.squid.repository=[docker registry]/reverse-proxy-squid \
 	  --set image.squid.tag=0.0.1 \
-	  --set image.icap.repository=<docker registry>/reverse-proxy-c-icap \
+	  --set image.icap.repository=[docker registry]/reverse-proxy-c-icap \
 	  --set image.icap.tag=0.0.1 \
 	  --set application.nginx.env.ALLOWED_DOMAINS='owasp.org.glasswall-icap.com\,www.owasp.org.glasswall-icap.com,cse.google.com.glasswall-icap.com,www,cse.google.com.glasswall-icap.com,google.com.glasswall-icap.com,www,google.com.glasswall-icap.com' \
 	  --set application.nginx.env.ROOT_DOMAIN='glasswall-icap.com' \
