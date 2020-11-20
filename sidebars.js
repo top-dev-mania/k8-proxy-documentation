@@ -32,6 +32,10 @@ module.exports = {
 						]
 					}
 				],							
+			},{
+				"Flavor E": [
+					"flavors/flavor-e/manual-setup-aws",
+				],						
 			},
 			{
 				"Flavor OVA": [
