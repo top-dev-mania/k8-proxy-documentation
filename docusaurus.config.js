@@ -9,8 +9,8 @@ module.exports = {
   onBrokenLinks: 'log',
   themeConfig: {
     algolia: {
-      apiKey: 'YOUR_API_KEY',
-      indexName: 'YOUR_INDEX_NAME',
+      apiKey: '01c9e72fccaff68d7ef9b3424acb7b37',
+      indexName: 'k8-proxy',
       contextualSearch: true,
       searchParameters: {},
     },
