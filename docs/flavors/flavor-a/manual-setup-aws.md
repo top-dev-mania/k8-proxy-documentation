@@ -178,48 +178,49 @@ After you have everything required follow the steps below:
    ```
 8. Select the domain that you added in your vhost
 
-   **If you don't want the IP to change everytime the instance gets rebooted or shutdown then Elastic IP is recommended.**
-   ### For instance with dynamic public IP
-      1. Open your rancher domain and follow from step 2. from the link https://github.com/k8-proxy/s-k8-proxy-rebuild/blob/master/stable-src/README.md#installation-steps-to-deploy-k8s-cluster-on-ec2-instances-using-rancher
-      2. A new instance will be created in EC2 instance console.
-   ### For instance with Elastic IP(Recommended)
-      1. Follow these steps but instead of rancher, it's for Flavour A. So change the tags from **rg-gw-dev: rancher** and **Name: rancher** to
-         **Name: Flavour-a** and **rg-gw-dev: Flavour-a** 
-         #### Important
-         When in the **Security Group** section don't forget to open up the required ports for Rancher. https://rancher.com/docs/rancher/v2.x/en/installation/requirements/ports/
-         ![port1](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/port/port1.png)
-         ![port2](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/port/port2.png)
+**If you don't want the IP to change everytime the instance gets rebooted or shutdown then Elastic IP is recommended.**
+### For instance with dynamic public IP
+1. Open your rancher domain and follow from step 2. from the link https://github.com/k8-proxy/s-k8-proxy-rebuild/blob/master/stable-src/README.md#installation-steps-to-deploy-k8s-cluster-on-ec2-instances-using-rancher
+2. A new instance will be created in EC2 instance console.
+### For instance with Elastic IP(Recommended)
+1. Follow these steps but instead of rancher, it's for Flavour A. So change the tags from **rg-gw-dev: rancher** and **Name: rancher** to
+   **Name: Flavour-a** and **rg-gw-dev: Flavour-a** 
 
+   #### Important
+   When in the **Security Group** section don't forget to open up the required ports for Rancher. https://rancher.com/docs/rancher/v2.x/en/installation/requirements/ports/
+   ![port1](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/port/port1.png)
+   ![port2](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/port/port2.png)
 
-         1. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-aws-ec2-instance-for-rancher-for-flavour-a
-         2. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#associate-elastic-ip-to-rancher-instance
-      2. Open your rancher domain.
-      3. Select **Add Cluster**
-      4. Select **Existing Node**
-      5. Name the Cluster rg-gw-dev-flavour-a
-      6. In **In-Tree Cloud Provide**, choose **Custom**
-         ![step6](./img/rancher/step6.png)
+      1. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-aws-ec2-instance-for-rancher-for-flavour-a
+      2. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#associate-elastic-ip-to-rancher-instance
+      
+2. Open your rancher domain.
+3. Select **Add Cluster**
+4. Select **Existing Node**
+5. Name the Cluster rg-gw-dev-flavour-a
+6. In **In-Tree Cloud Provide**, choose **Custom**
+   ![step6](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/rancher/step6.png)
 
-      7. Click on **Next**
-      8. Select **etcd**, **Control Plane**, **Worker**
-         ![step8](./img/rancher/step8.png)
-         
-      9. Click on **Show advanced options**
-      10. Enter the **Node Public Address**(Elastic IP), **Node Internal Address**(Private IPv4 addresses), **Node Name**(The value you added in as Name as tag when creating the EC2 instance eg. if you have a key Name and the value is set to flavour-a, use flavour-a), which can be found in instance details tab when you select the newly created instance in the EC2 console.
-         ![step10](./img/rancher/step10.png)
-      11. Copy the docker command.
-      11. SSH to the instance using the keypair that you retrieved in step 1.
-      12. Install docker
-         ```
-         sudo apt-get update
-         sudo apt-get install apt-transport-https  ca-certificates  curl  gnupg-agent software-properties-common
-         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-         sudo apt-key fingerprint 0EBFCD88
-         sudo apt-get update
-         sudo apt-get install docker-ce docker-ce-cli containerd.io
-         ```
-      13. Paste the command and run.
-      14. Go to your rancher console and select done.
+7. Click on **Next**
+8. Select **etcd**, **Control Plane**, **Worker**
+   ![step8](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/rancher/step8.png)
+   
+9. Click on **Show advanced options**
+10. Enter the **Node Public Address**(Elastic IP), **Node Internal Address**(Private IPv4 addresses), **Node Name**(The value you added in as Name as tag when creating the EC2 instance eg. if you have a key Name and the value is set to flavour-a, use flavour-a), which can be found in instance details tab when you select the newly created instance in the EC2 console.
+   ![step10](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/rancher/step10.png)
+11. Copy the docker command.
+11. SSH to the instance using the keypair that you retrieved in step 1.
+12. Install docker
+   ```
+   sudo apt-get update
+   sudo apt-get install apt-transport-https  ca-certificates  curl  gnupg-agent software-properties-common
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   sudo apt-key fingerprint 0EBFCD88
+   sudo apt-get update
+   sudo apt-get install docker-ce docker-ce-cli containerd.io
+   ```
+13. Paste the command and run.
+14. Go to your rancher console and select done.
 
 ## Creating an IAM user for Docker Repository 
 1. Open the IAM user console http://console.aws.amazon.com/iam
