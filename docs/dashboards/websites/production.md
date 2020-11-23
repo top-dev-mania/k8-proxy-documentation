@@ -36,6 +36,7 @@ sidebar_label: Production
 
 
 ### SOW based ICAP servers:
+- icap-client.northeurope.cloudapp.azure.com (its running in AKS on large nodes)
 - icap01.glasswall-icap.com	54.155.107.189
 - icap02.glasswall-icap.com	34.240.204.39
 - 3.129.78.231
