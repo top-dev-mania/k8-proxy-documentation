@@ -32,7 +32,8 @@ module.exports = {
 						]
 					}
 				],							
-			},{
+			},
+			{
 				"Flavor E": [
 					"flavors/flavor-e/manual-setup-aws",
 				],						
@@ -64,7 +65,44 @@ module.exports = {
 		"Websites":
 		[
 			{					
-				"SharePoint": [	
+					
+				"a10networks": [	
+				"websites/a10networks/overview",				
+				],								
+				"atlassian": [	
+				"websites/atlassian/overview",
+				],
+				"bsigroup": [	
+				"websites/bsigroup/overview",			
+				],
+				"fortinet": [	
+				"websites/fortinet/overview",
+				],
+				"github": [	
+				"websites/github/overview",
+				],
+				"gov.uk": [	
+				"websites/gov.uk/overview",
+				],
+				"gwfiledrop": [	
+				"websites/gwfiledrop/overview",
+				],	
+				"gwwebsite": [	
+				"websites/gwwebsite/overview",
+				],
+				"gwengineering": [	
+				"websites/gwengineering/overview",
+				],
+				"microsoft": [	
+				"websites/microsoft/overview",
+				],
+				"msrb": [	
+				"websites/msrb/overview",
+				],
+				"owasp": [	
+				"websites/owasp/overview",
+				],
+				"sharepoint": [	
 					{
 						"cloud":
 						[
@@ -77,84 +115,13 @@ module.exports = {
 							"websites/sharepoint/self-hosted/manual-install",
 							"websites/sharepoint/self-hosted/http-module",							
 						],	
-				"owasp": [	
-				"websites/owasp/overview",
-				],
-				"github": [	
-				"websites/github/overview",
-				],
-				"microsoft": [	
-				"websites/microsoft/overview",
-				],
-				"fortinet": [	
-				"websites/fortinet/overview",
-				],
-				"a10networks": [	
-				"websites/a10networks/overview",				
-				],
-				"bsigroup": [	
-				"websites/bsigroup/overview",			
-				],
-				"gwengineering": [	
-				"websites/gwengineering/overview",
-				],
-				"gwwebsite": [	
-				"websites/gwwebsite/overview",
-				],
-				"msrb": [	
-				"websites/msrb/overview",
-				],
+					}
+				],	
 				"ukzones": [	
 				"websites/ukzones/overview",
-				],
+				],	
 			},							
-		],	
-		"KB":
-			[									
-				"kb/style-guide",
-				"kb/website-checklist",					
-				],
-				"gov.uk": [	
-				"websites/gov.uk/overview",
-				],
-				"gwfiledrop": [	
-				"websites/gwfiledrop/overview",
-				],					
-				"atlassian": [	
-				"websites/atlassian/overview",
-				],
-				"owasp": [	
-				"websites/owasp/overview",
-				],
-				"github": [	
-				"websites/github/overview",
-				],
-				"microsoft": [	
-				"websites/microsoft/overview",
-				],
-				"fortinet": [	
-				"websites/fortinet/overview",
-				],
-				"a10networks": [	
-				"websites/a10networks/overview",				
-				],
-				"bsigroup": [	
-				"websites/bsigroup/overview",			
-				],
-				"gwengineering": [	
-				"websites/gwengineering/overview",
-				],
-				"gwwebsite": [	
-				"websites/gwwebsite/overview",
-				],
-				"msrb": [	
-				"websites/msrb/overview",
-				],
-				"ukzones": [	
-				"websites/ukzones/overview",
-				],
-			},							
-		],	
+		],			
 		"KB":
 			[									
 				"kb/style-guide",
