@@ -33,6 +33,7 @@ sidebar_label: Production
 | Mastercard|https://www.mastercard.co.uk.glasswall-icap.com/en-gb.html|18.216.36.55|ICAP deployed|443|Live AWS| [mastercard](https://github.com/k8-proxy/gp-mastercard-website)|
 | Adarma|http://www.adarma.com.glasswall-icap.com/|54.244.172.39|ICAP deployed|443|Live AWSg| [adarma](https://github.com/k8-proxy/gp-adarma-website)|
 | microsoft.com |https://www.microsoft.com.glasswall-icap.com/|18.157.111.73|ICAP deployed|443|Live AWS| [Microsoft](https://github.com/k8-proxy/gp-microsoft-website)|
+| wordpress |gw-wordpress.com.glasswall-icap.com |3.6.237.153 | ICAP deployed|443|Live AWS| [Wordpress](https://github.com/k8-proxy/gp-wordpress-website)|
 
 
 
