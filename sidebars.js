@@ -3,9 +3,17 @@ module.exports = {
 		"Dashboards":
 			[
 				{
+					"Client Welcome": [					
+						"dashboards/client-welcome/index",
+					],							
+				},
+				{
 					"Websites": [					
-						"dashboards/websites/production",
+						"dashboards/websites/deployment-notes",
 						"dashboards/websites/development",
+						"dashboards/websites/flavours",
+						"dashboards/websites/notassigned",
+						"dashboards/websites/production",						
 					],							
 				}
 			],
@@ -84,17 +92,20 @@ module.exports = {
 				"gov.uk": [	
 				"websites/gov.uk/overview",
 				],
+				"gwengineering": [	
+				"websites/gwengineering/overview",
+				],
 				"gwfiledrop": [	
 				"websites/gwfiledrop/overview",
 				],	
 				"gwwebsite": [	
 				"websites/gwwebsite/overview",
-				],
-				"gwengineering": [	
-				"websites/gwengineering/overview",
-				],
+				],			
 				"microsoft": [	
 				"websites/microsoft/overview",
+				],
+				"miniio": [	
+				"websites/miniio/overview",
 				],
 				"msrb": [	
 				"websites/msrb/overview",
