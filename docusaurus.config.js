@@ -10,9 +10,7 @@ module.exports = {
   themeConfig: {
     algolia: {
       apiKey: '01c9e72fccaff68d7ef9b3424acb7b37',
-      indexName: 'k8-proxy',
-      contextualSearch: true,
-      searchParameters: {},
+      indexName: 'k8-proxy'    
     },
     navbar: {
       title: "K8 Proxy Documentation",
