@@ -1,20 +1,21 @@
 ---
-title: atlassian Overview
+title: miniio Overview
 sidebar_label: Overview
 ---
 
 see [Development Websites Dashboard for details](../../dashboards/websites/development.md)
 
-
-# Reverse proxy configuration for mariusztst.atlassian.net, os-summit.atlassian.net, glasswall.atlassian.net - 
+# Reverse proxy configuration for min.io
 
 ## Requirements
 
-- **Ubuntu LTS** (Tested on Ubuntu 18.04 LTS)*
+- **Ubuntu LTS** (Tested on Ubuntu 20.04 LTS)*
+
+- **Docker**
+
+- **Docker compose**
 
 - **Git**
-
-- **local-dns-changes is mandatory - this solution uses the same source and destination domain**
 
 > *WSL (Windows Subsystem Linux) is not supported
 
@@ -28,7 +29,7 @@ We needed to check the website requests to check domains of interest, (domains t
 
 - Domains that hosts files that should be rebuilt against Glasswall rebuild engine
 
-  ### Finding domains of interest
+### Finding domains of interest
 
 - Open a browser that included dev tools (i.e : **Mozilla Firefox**)
 
@@ -40,13 +41,13 @@ We needed to check the website requests to check domains of interest, (domains t
 
 ### Configuration
 
-Tweak **gwproxy.env** according to our configuration (a pre-configured file already included in the repository), This is a variables definition example: 
+- Tweak **gwproxy.env** according to our configuration (a pre-configured file already included in the repository), This is a variables definition example: 
 
-- `ROOT_DOMAIN`: the domain appended to the original website domain, typically: glasswall-icap.com
-- `ALLOWED_DOMAINS` : Comma separated domains accepted by the proxy, typically this should be domains of interest (figured out in the previous step) with the `ROOT_DOMAIN` value appended
-- `ICAP_URL` : the URL of the ICAP server either running on a docker on the same machine or through a load-balancer server.
-- `SQUID_IP` IP address of squid proxy, used by nginx, should be only changed on advanced usage of the docker image (example: Kubernetes)
-- `SUBFILTER_ENV`: Space separated text substitution rules in response body, formatted as **match,replace** , used for URL rewriting as in **.gov.uk,.gov.uk.glasswall-icap.com**
+  - `ROOT_DOMAIN`: the domain appended to the original website domain, typically: glasswall-icap.com
+  - `ALLOWED_DOMAINS` : Comma separated domains accepted by the proxy, typically this should be domains of interest (figured out in the previous step) with the `ROOT_DOMAIN` value appended
+  - `ICAP_URL` : the URL of the ICAP server either running on a docker on the same machine or through a load-balancer server.
+  - `SQUID_IP` IP address of squid proxy, used by nginx, should be only changed on advanced usage of the docker image (example: Kubernetes)
+  - `SUBFILTER_ENV`: Space separated text substitution rules in response body, formatted as **match,replace** , used for URL rewriting as in **.gov.uk,.gov.uk.glasswall-icap.com**
 
 ## Installation
 
@@ -65,24 +66,26 @@ Tweak **gwproxy.env** according to our configuration (a pre-configured file alre
 - Prepare the repositories
   
   ```bash
-    git clone --recursive https://github.com/k8-proxy/k8-reverse-proxy.git
-    git clone https://github.com/k8-proxy/gp-jira-website
-    wget https://github.com/filetrust/Glasswall-Rebuild-SDK-Evaluation/releases/download/1.117/libglasswall.classic.so -O k8-reverse-proxy/stable-src/c-icap/Glasswall-Rebuild-SDK-Evaluation/Linux/Library/libglasswall.classic.so
-    cp -rf gp-jira-website/atlassian.net/local-dns-changes/* k8-reverse-proxy/stable-src/
+    git clone --recursive https://github.com/k8-proxy/k8-reverse-proxy
+    git clone https://github.com/k8-proxy/gp-miniio-website
+    wget https://github.com/filetrust/sdk-rebuild-eval/raw/master/libs/rebuild/linux/libglasswall.classic.so -O k8-reverse-proxy/stable-src/c-icap/Glasswall-Rebuild-SDK-Evaluation/Linux/Library/libglasswall.classic.so
+    cp -rf gp-miniio-website/* k8-reverse-proxy/stable-src/
     cd k8-reverse-proxy/stable-src/
   ```
 
-- copy SSL credentials
+- Tweak `openssl.cnf` to include domains of interest in **alt_names** section (by default, this file is pre-configured in the repository)
+
+- Generate new SSL credentials
   
   ```bash
-    cp -f full.pem nginx/
-	cp -f squid.pem squid/
+    ./gencert.sh
+    mv full.pem nginx/
   ```
 
-- Start the deployment 
+- Start the deployment    
   
   ```bash
-    docker-compose up -d --force-recreate --build
+    docker-compose up -d --build
   ```
   
   From now on, you will need to use this command after every change to any of the configuration files **gwproxy.env**, **subfilter.sh**, **docker-compose.yaml**, if any.
@@ -107,24 +110,24 @@ Tweak **gwproxy.env** according to our configuration (a pre-configured file alre
   docker-compose up -d --force-recreate
   ```
   
+  
+  
   ## Client configuration
   
 - Add hosts records to your client system hosts file ( i.e **Windows**: C:\Windows\System32\drivers\etc\hosts , **Linux, macOS and  Unix-like:** /etc/hosts ) as follows
   
   ```
-  127.0.0.1 mariusztst.atlassian.net os-summit.atlassian.net glasswall.atlassian.net api.media.atlassian.com
+  127.0.0.1 min.io.glasswall-icap.com slack.min.io.glasswall-icap.com blog.min.io.glasswall-icap.com dl.min.io.glasswall-icap.com docs.min.io.glasswall-icap.com
   ```
   
   In case you are using a client other than machine running the project , replace **127.0.0.1** with the project host machine IP,
   
   make sure that tcp ports **80** and **443** are reachable and not blocked by firewall.
 
-* Move ***k8-reverse-proxy/stable-src/CA.cer** to your client machine and add it to your browser/system ssl trust store.
+* Move ***k8-reverse-proxy/stable-src/ca.pem*** to your client machine and add it to your browser/system ssl trust store.
 
 ## Access the proxied site
 
-You can access the proxied site by browsing:
+- **Local Setup**: You can access the proxied site by browsing [min.io.glasswall-icap.com](https://min.io.glasswall-icap.com) after adding `k8-reverse-proxy/stable-src/ca.pem` to your browser/system ssl trust store.
 
-- https://mariusztst.atlassian.net/
-- https://os-summit.atlassian.net/
-- https://glasswall.atlassian.net/
+  
