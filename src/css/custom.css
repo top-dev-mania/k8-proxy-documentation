@@ -26,6 +26,9 @@ html[data-theme='dark'] {
   --ifm-font-color-base-inverse: white;
 }
 
+.row .col {
+  padding-top:20px
+}
 
 .docusaurus-highlight-code-line {
   background-color: #3498db;
@@ -36,6 +39,10 @@ html[data-theme='dark'] {
 
 .button--lg {
   color: white;
+}
+
+.buttons_src-pages-gw {
+  padding-left: 280px;
 }
 
 .hero, .footer {
@@ -50,7 +57,6 @@ html[data-theme='dark'] {
 .footer .container > div:last-of-type {
   font-size: 12px;
 }
-
 
 .react-toggle-track-check span::before {
   content: '' !important;

@@ -7,6 +7,85 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 // import Ticker from 'react-ticker'
 
+const outlines = [
+  {
+    title: (
+      <>
+        Working from home means greater reliance on cloud technologies.
+      </>
+    ),
+    imageUrl: 'img/digital-transformation-1150x700..2.png',
+    description: (
+      <>
+        We are all having to work differently, remotely sharing, storing and accessing more files than ever before.
+      </>
+    ),
+  },
+  {
+    title: (
+      <>
+        Increasing access elevates risk.
+      </>
+    ),
+    imageUrl: 'img/digital-transformation-risk-1150x700.2.png',
+    description: (
+      <>
+        There is a growing need for innovative solutions to address this expanding attack surface without compromising productivity.
+      </>
+    ),
+  },
+  {
+    title: (
+      <>
+        Glasswall offers unparalleled protection from file-based threats.
+      </>
+    ),
+    imageUrl: 'img/process-1150x700.1.png',
+    description: (
+      <>
+        Signature-based security seeks to identify and remove dangerous files. Malware morphs and spreads at such a rate that malicious files are often missed and harmless files held, impacting both safety and productivity. Without relying on signatures or detections, Glasswall's products and solutions regenerate clean, safe and visually identical files in milliseconds, securing your organisation without compromise.
+      </>
+    ),
+    url: 'https://glasswallsolutions.com/products',
+    btnText: (
+      <>
+        VIEW OUR PRODUCTS
+      </>
+    ),
+  },
+  
+];
+
+const introduces = [
+  {
+    title: 'deep-File Inspection',
+    imageUrl: 'img/deepfile-340.png',
+    description: (
+      <>
+         deep-File Inspection breaks down the entire file and validates it against the file format’s specification. 
+      </>
+    ),
+  },
+  {
+    title: 'Remediation',
+    imageUrl: 'img/remediation-340.png',
+    description: (
+      <>
+        All deviations uncovered during the inspection are remediated back into line with the file standard.
+      </>
+    ),
+  },
+  {
+    title: 'Sanitisation',
+    imageUrl: 'img/sanitisation-340.png',
+    description: (
+      <>
+        Sanitisation removes high-risk Active Content such as macros, JavaScript, URLs and embedded files.
+      </>
+    ),
+  },
+];
+
 const features = [
   {
     // title: 'deep-File Inspection',
@@ -21,6 +100,11 @@ const features = [
       </>
     ),
     url: 'https://glasswallsolutions.com/glasswall-partners-with-link22/',
+    btnText: (
+      <>
+        LEARN MORE
+      </>
+    ),
   },
   {
     //title: 'Focus on What Matters',
@@ -33,6 +117,11 @@ const features = [
       </>
     ),
     url: 'https://glasswallsolutions.com/rebuild-api-launch/',
+    btnText: (
+      <>
+        LEARN MORE
+      </>
+    ),
   },
   {
     //title: 'Powered by React',
@@ -45,10 +134,108 @@ const features = [
       </>
     ),
     url: 'https://glasswallsolutions.com/free-cyber-protection-for-small-businesses/',
+    btnText: (
+      <>
+        LEARN MORE
+      </>
+    ),
   },
 ];
 
-function Feature({imageUrl, title, description, url}) {
+const trustButton = [
+  {
+    title: (
+      <>
+        LEARN MORE
+      </>
+    ),
+    url: 'https://glasswallsolutions.com/glasswall-partners-with-link22/',
+  },
+  {
+    title: (
+      <>
+        VIEW OUR PRODUCTS
+      </>
+    ),
+    url: 'https://glasswallsolutions.com/rebuild-api-launch/',
+  },
+];
+
+function ShowButton({title, url}) {
+  return (
+    <div className={clsx('col col--6', styles.feature)}>
+        <div className={styles.buttons}>
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={url}>
+              {title}
+            </Link>
+      </div>
+    </div>
+  );
+}
+
+const introButton = [
+  {
+    title: (
+      <>
+        LEARN MORE
+      </>
+    ),
+    url: 'https://glasswallsolutions.com/technology/',
+  },
+];
+
+function ShowOneButton({title, url}) {
+  return (
+    <div className={clsx('col col--12', styles.feature)}>
+        <div className={styles.buttons}>
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={url}>
+              {title}
+            </Link>
+      </div>
+    </div>
+  );
+}
+
+
+function Outline({imageUrl, title, description, btnText, url}) {
+  const imgUrl = useBaseUrl(imageUrl);
+  return (
+    <div className={clsx('col col--12', styles.feature)}>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      
+      {imgUrl && (
+        <div className="text--center">
+          <img className={styles.outlineImage} src={imgUrl} alt={title} />
+        </div>
+      )}
+      
+      {btnText && (<div className={styles.buttons}>
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={url}>
+              {btnText}
+            </Link>
+      </div>)}
+      
+    </div>
+  );
+}
+
+function Feature({imageUrl, title, description, url, btnText}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
@@ -59,16 +246,16 @@ function Feature({imageUrl, title, description, url}) {
       )}
       <h3>{title}</h3>
       <p>{description}</p>
-      <div className={styles.buttons}>
+      {btnText && (<div className={styles.buttons}>
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
               to={url}>
-              Read More
+              {btnText}
             </Link>
-      </div>
+      </div>)}
     </div>
   );
 }
@@ -79,7 +266,7 @@ function Home() {
   return (
     <Layout
 
-    title={`Hello from ${siteConfig.title}`}
+      title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       {/* <Ticker mode="smoth" height = "100">
         {({ index }) => (
@@ -95,20 +282,56 @@ function Home() {
           {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
           <p className="hero__subtitle">We are a file regeneration and analytics company, and a leader 
           in the field of CDR: Content Disarm and Reconstruction</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/dashboards/websites/production')}>
-              Get Started
-            </Link>
-          </div>
-          
+          {trustButton && trustButton.length > 0 && (
+            <section className={styles.features}>
+              <div className="container">
+                <div className="row">
+                  {trustButton.map((props, idx) => (
+                    <ShowButton key={idx} {...props} />
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
         </div>
       </header>
       <main>
+      {outlines && outlines.length > 0 && (
+          <section className={styles.outlines}>
+            <div className="container">
+              <div className="row">
+                {outlines.map((props, idx) => (
+                  <Outline key={idx} {...props} />         
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {introduces && introduces.length > 0 && (
+          <section className={styles.features}>
+            <div className="container">
+              <div className="row">
+                {introduces.map((props, idx) => (
+                  <Feature key={idx} {...props} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+      
+      {introButton && introButton.length > 0 && (
+        <section className={styles.features}>
+          <div className="container">
+            <div className="row">
+              {introButton.map((props, idx) => (
+                <ShowOneButton key={idx} {...props} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
         {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
