@@ -32,6 +32,11 @@
 }
 
 .featureImage {
-  height: 200px;
+  padding-top: 50px;
   width: 200px;
+}
+
+.outlineImage {
+  padding-top: 50px;
+  width: 560px;
 }
