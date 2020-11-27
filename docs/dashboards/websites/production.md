@@ -5,9 +5,9 @@ sidebar_label: Production
 
 ### Deployed websites in ESXi
 
-| Website  | Outcome URL | Status | Flavor | Ports opened | IP | Repo |
-|---|---|---|---|---|---|---|
-|Glasswall solutions ||In progress|||||
+| Website  | Outcome URL | Status | Flavor | Ports opened | IP |
+|---|---|---|---|---|---|
+|Glasswall solutions |www.glasswallsolutions.com.glasswall-icap.com|Live||443|91.109.25.87|
 |GW Engineering||In progress|||||
 |OWASP||In progress|||||
 |Minio server||In progress|||||
@@ -21,7 +21,7 @@ sidebar_label: Production
 | Website  | Outcome URL | IP | Flavor | Ports opened | Status | Repo |
 |---|---|---|---|---|---|---|
 | GW Engineering  | https://engineering.glasswallsolutions.com.glasswall-icap.com | 54.170.84.172 | B: Docker v0.1  |  443 | Live AWS |[GW engineering](https://github.com/k8-proxy/gp-engineering-website)|
-| GW Website      | https://glasswallsolutions.com.glasswall-icap.com             | 54.78.209.23  |A: K8s v0.1      | 443  | Live AWS |[Glasswall Solutions](https://github.com/k8-proxy/gp-glasswallsolutions-website)|
+| GW Website      | https://glasswallsolutions.com.glasswall-icap.com             | 54.78.209.23  |A: K8s v0.1      | 443  | Stopped |[Glasswall Solutions](https://github.com/k8-proxy/gp-glasswallsolutions-website)|
 | dataport.emma.msrb.org |https://dataport.emma.msrb.org.glasswall-icap.com/Home/Index and https://emma.msrb.org.glasswall-icap.com/|3.120.30.57|E: SOW v0.2|443|Live AWS|[Emma port](https://github.com/k8-proxy/gp-emma-dataport-website)|
 | UK Zones  | https://uk.zones.com.glasswall-icap.com | 54.78.104.24 |B: Docker v0.1| 443 | Live AWS |[UK zones](https://github.com/k8-proxy/gp-uk-zones-com)|
 | owasp.org |https://owasp.org.glasswall-icap.com/|34.247.160.95|SOW v0.2|443|Live AWS|[OWASP](https://github.com/k8-proxy/gp-owasp-website)|
