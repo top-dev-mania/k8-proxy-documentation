@@ -7,6 +7,10 @@ see [Development Websites Dashboard for details](../../dashboards/websites/devel
 
 ## Reverse proxy for microsoft website
 
+### Demo video
+[![](http://img.youtube.com/vi/d51iV5cEqs8/0.jpg)](http://www.youtube.com/watch?v=d51iV5cEqs8 "Microsoft demo")
+
+
 ## Requirements
 
 - **Docker**
