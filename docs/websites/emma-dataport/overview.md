@@ -145,7 +145,7 @@ Switch to the reverse proxy k8s deployment repo
 Record the icap server service IP address (it seems like squid doesn't like when we use the service name, still investigating that)
   ```bash
     $ kubectl -n icap-adaptation get svc | grep icap-service
-    icap-service                        NodePort       10.4.6.142   <none>          1344:32278/TCP   23h
+    icap-service                        NodePort       10.4.6.142   none          1344:32278/TCP   23h
   ```
 For the example above, ip is 10.4.6.142 
 
@@ -153,11 +153,11 @@ For the example above, ip is 10.4.6.142
 Setup the services
   ```bash
     helm upgrade --namespace icap-adaptation upgrade --install \
-	--set image.nginx.repository=<docker registry>/reverse-proxy-nginx \
+	--set image.nginx.repository=docker registry>/reverse-proxy-nginx \
 	--set image.nginx.tag=0.0.1 \
-	--set image.squid.repository=<docker registry>/reverse-proxy-squid \
+	--set image.squid.repository=docker registry>/reverse-proxy-squid \
 	--set image.squid.tag=0.0.1 \
-	--set image.icap.repository=<docker registry>/reverse-proxy-c-icap \
+	--set image.icap.repository=docker registry>/reverse-proxy-c-icap \
 	--set image.icap.tag=0.0.1 \
 	--set application.nginx.env.ALLOWED_DOMAINS='dataport.emma.msrb.org.glasswall-icap.com\,www.dataport.emma.msrb.org.glasswall-icap.com' \
 	--set application.nginx.env.ROOT_DOMAIN='glasswall-icap.com' \
@@ -168,13 +168,13 @@ Setup the services
   ```
 
 Edit the nginx deployment to set the correct icap server url (we need to use the icap server from adaptation service)
-The server url should be : icap://<ip_recorded above>:1344/gw_rebuild
+The server url should be : icap://ip_recorded above:1344/gw_rebuild
   ```bash
     $ kubectl -n icap-adaptation edit deployment/reverse-proxy-nginx
   ```
 
 Edit the squid deployment to set the correct icap server url (we need to use the icap server from adaptation service)
-The server url should be : icap://<ip_recorded above>:1344/gw_rebuild
+The server url should be : icap://ip_recorded above>:1344/gw_rebuild
   ```bash
     $ kubectl -n icap-adaptation edit deployment/reverse-proxy-quid
   ```
