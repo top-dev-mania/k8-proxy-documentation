@@ -9,6 +9,10 @@ see [Development Websites Dashboard for details](../../dashboards/websites/devel
 
 https://www.bsigroup.com/en-GB (Primary URL), https://page.bsigroup.com/ (CDN URL) + include cert manager
 
+### Demo video
+[![](http://img.youtube.com/vi/_wX4vB6ByJI/0.jpg)](http://www.youtube.com/watch?v=_wX4vB6ByJI "BSIGROUP demo")
+
+
 ## Rancher
 
 Rancher is a container management platform built for organizations that deploy containers in production. Rancher makes it easy to run Kubernetes everywhere, meet IT requirements, and empower DevOps teams.
