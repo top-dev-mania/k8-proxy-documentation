@@ -1,5 +1,5 @@
 ---
-title: Adarma Overview
+title: adarma Overview
 sidebar_label: Overview
 ---
 
