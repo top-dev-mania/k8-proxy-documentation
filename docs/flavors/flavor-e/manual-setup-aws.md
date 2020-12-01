@@ -26,7 +26,7 @@ sidebar_label: Manual Setup (AWS)
 5. Add group name then choose **Create Group**
 
 
-## Setting up AWS EC2 instance for Rancher for Flavour E
+## Setting up AWS EC2 instance for Rancher for Flavor E
 
 1. Open the EC2 console at https://console.aws.amazon.com/ec2/
 2. Click on instances
@@ -35,7 +35,7 @@ sidebar_label: Manual Setup (AWS)
  ![step3](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/ec2-for-rancher/step3.png)
 4. In **Step 1: Choose an Amazon Machine Image (AMI)**, Select **Ubuntu Server 20.04 LTS (HVM), SSD Volume Type**.
  ![step31](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/ec2-for-rancher/step31.png)
-5. In **Step 2: Choose an Instance Type**, For Flavour E, We went with t3a.medium because of the minimum requirement for Rancher  choose **Next: Configure Instance Details**.
+5. In **Step 2: Choose an Instance Type**, For Flavor E, We went with t3a.medium because of the minimum requirement for Rancher  choose **Next: Configure Instance Details**.
  ![step32](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/ec2-for-rancher/step32.png)
 6. In **Step 3: Choose an Instance Type**, Leave everything to default and choose **Next: Add Storage**.
  ![step331](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/ec2-for-rancher/step331.png)
@@ -112,7 +112,7 @@ The public ip AWS assings isn't persistent and will change everytime you shutdow
 It is highly advised to have a domain for the Rancher instance or you'll be facing tons of issues.
 Use the **Access key id** and **Secret access Key** that was retrieved in https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#iam-user-for-rancher when Rancher asks for it.
 After you have everything required follow the steps below:
-1. SSH to Rancher instance using the keypair that you retrieved from https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-aws-ec2-instance-for-rancher-for-flavour-a
+1. SSH to Rancher instance using the keypair that you retrieved from https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-aws-ec2-instance-for-rancher-for-flavor-a
     
 2. Install docker
    ```
@@ -183,21 +183,21 @@ After you have everything required follow the steps below:
 1. Open your rancher domain and follow from step 2. from the link https://github.com/k8-proxy/s-k8-proxy-rebuild/blob/master/stable-src/README.md#installation-steps-to-deploy-k8s-cluster-on-ec2-instances-using-rancher
 2. A new instance will be created in EC2 instance console.
 ### For instance with Elastic IP(Recommended)
-1. Follow these steps but instead of rancher, it's for Flavour E. So change the tags from **rg-gw-dev: rancher** and **Name: rancher** to
-   **Name: Flavour-a** and **rg-gw-dev: Flavour-a** 
+1. Follow these steps but instead of rancher, it's for Flavor E. So change the tags from **rg-gw-dev: rancher** and **Name: rancher** to
+   **Name: Flavor-a** and **rg-gw-dev: Flavor-a** 
 
    #### Important
    When in the **Security Group** section don't forget to open up the required ports for Rancher. https://rancher.com/docs/rancher/v2.x/en/installation/requirements/ports/
    ![port1](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/port/port1.png)
    ![port2](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/port/port2.png)
 
-      1. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-aws-ec2-instance-for-rancher-for-flavour-a
+      1. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#setting-up-aws-ec2-instance-for-rancher-for-flavor-a
       2. https://k8-proxy.github.io/k8-proxy-documentation/docs/flavors/flavor-a/manual-setup-aws#associate-elastic-ip-to-rancher-instance
 
 2. Open your rancher domain.
 3. Select **Add Cluster**
 4. Select **Existing Node**
-5. Name the Cluster rg-gw-dev-flavour-a
+5. Name the Cluster rg-gw-dev-flavor-a
 6. In **In-Tree Cloud Provide**, choose **Custom**
     ![step6](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/rancher/step6.png)
 
@@ -206,7 +206,7 @@ After you have everything required follow the steps below:
     ![step8](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/rancher/step8.png)
     
 9. Click on **Show advanced options**
-10. Enter the **Node Public Address**(Elastic IP), **Node Internal Address**(Private IPv4 addresses), **Node Name**(The value you added in as Name as tag when creating the EC2 instance eg. if you have a key Name and the value is set to flavour-a, use flavour-a), which can be found in instance details tab when you select the newly created instance in the EC2 console.
+10. Enter the **Node Public Address**(Elastic IP), **Node Internal Address**(Private IPv4 addresses), **Node Name**(The value you added in as Name as tag when creating the EC2 instance eg. if you have a key Name and the value is set to flavor-a, use flavor-a), which can be found in instance details tab when you select the newly created instance in the EC2 console.
     ![step10](../../../static/img/docs/flavors/flavor-a/manual-setup-aws/rancher/step10.png)
 11. Copy the docker command.
 11. SSH to the instance using the keypair that you retrieved in step 1.

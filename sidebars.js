@@ -8,9 +8,12 @@ module.exports = {
 					],							
 				},
 				{
-					"Websites": [					
+					"Websites": [											
+						"dashboards/websites/production",	
+						"dashboards/websites/development",	
 						"dashboards/websites/deployment-notes",
-						"dashboards/websites/production",						
+						"dashboards/websites/flavors",	
+						"dashboards/websites/notassigned",											
 					],							
 				}
 			],
@@ -69,11 +72,10 @@ module.exports = {
 		],
 		"Websites":
 		[
-			{					
-					
-				"a10networks": [	
-				"websites/a10networks/overview",				
-				],								
+			{		
+				"adarma": [	
+				"websites/adarma/overview",
+				],						
 				"atlassian": [	
 				"websites/atlassian/overview",
 				],
@@ -82,10 +84,7 @@ module.exports = {
 				],
 				"fortinet": [	
 				"websites/fortinet/overview",
-				],
-				"github": [	
-				"websites/github/overview",
-				],
+				],				
 				"gov.uk": [	
 				"websites/gov.uk/overview",
 				],
@@ -103,10 +102,7 @@ module.exports = {
 				],
 				"miniio": [	
 				"websites/miniio/overview",
-				],
-				"msrb": [	
-				"websites/msrb/overview",
-				],
+				],				
 				"owasp": [	
 				"websites/owasp/overview",
 				],
