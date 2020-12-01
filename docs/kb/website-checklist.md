@@ -4,7 +4,7 @@ title: Website Implementation and documentation checklist
 sidebar_label: Website Implementation and documentation checklist
 ---
 
-The purpose of this checklist is to provide the set of tasks that have to be followed as a base for each of the website proxy implementation and a list of the expected deliverables from each team. This implementation checklist is for the SOW flavour: (https://github.com/filetrust/icap-infrastructure)
+The purpose of this checklist is to provide the set of tasks that have to be followed as a base for each of the website proxy implementation and a list of the expected deliverables from each team. This implementation checklist is for the SOW flavor: (https://github.com/filetrust/icap-infrastructure)
 
 ## Implementation checklist
 
