@@ -129,7 +129,7 @@ In owasp website search results were not working properly as Owasp use JS functi
 https://github.com/k8-proxy/gp-owasp-website
 
 ### Flavor Setup
-Flavour E
+Flavor E
 
 ### Manual Website Setup
 Same instructions as above.
@@ -143,7 +143,7 @@ NA
 Kubernetes Version: 1.17.8
 OS: Centos
 Helm: 3.4.0
-Icap Flavour: Sow
+Icap Flavor: Sow
 
 # Cloud Details
 Hosted on AWS

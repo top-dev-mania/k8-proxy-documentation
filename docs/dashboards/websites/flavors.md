@@ -1,4 +1,9 @@
-Current flavours that are being used for development
+---
+title: Flavors
+sidebar_label: Flavors
+---
+
+Current flavors that are being used for development
 
 | Name  | Owner | GW Proxy Engine |
 |---|---|---|
