@@ -10,6 +10,9 @@ see [Development Websites Dashboard for details](../../dashboards/websites/devel
 ### Demo video
 [![](http://img.youtube.com/vi/d51iV5cEqs8/0.jpg)](http://www.youtube.com/watch?v=d51iV5cEqs8 "Microsoft demo")
 
+[![](http://img.youtube.com/vi/mdCaZRQmg5M/0.jpg)](http://www.youtube.com/watch?v=mdCaZRQmg5M "Microsoft demo")
+
+
 
 ## Requirements
 
