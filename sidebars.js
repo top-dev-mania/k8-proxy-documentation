@@ -10,9 +10,6 @@ module.exports = {
 				{
 					"Websites": [					
 						"dashboards/websites/deployment-notes",
-						"dashboards/websites/development",
-						"dashboards/websites/flavours",
-						"dashboards/websites/notassigned",
 						"dashboards/websites/production",						
 					],							
 				}
