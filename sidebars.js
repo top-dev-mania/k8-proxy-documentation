@@ -8,9 +8,12 @@ module.exports = {
 					],							
 				},
 				{
-					"Websites": [					
+					"Websites": [											
+						"dashboards/websites/production",	
+						"dashboards/websites/development",	
 						"dashboards/websites/deployment-notes",
-						"dashboards/websites/production",						
+						"dashboards/websites/flavors",	
+						"dashboards/websites/notassigned",											
 					],							
 				}
 			],

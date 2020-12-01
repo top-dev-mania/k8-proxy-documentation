@@ -42,4 +42,4 @@ Status: UP>Up, UN>Unknown, DO> Down
 - For owasp: cse.google.com.glasswall-icap.com - 34.247.160.95 and google.com.glasswall-icap.com - 34.247.160.95
 
 ### Other notes:
-*Flavour A for Proxy & ICAP from Flavour E SOW v0.3 (October 28th)
+*Flavor A for Proxy & ICAP from Flavor E SOW v0.3 (October 28th)
