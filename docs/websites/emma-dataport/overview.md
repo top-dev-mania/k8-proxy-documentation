@@ -52,7 +52,7 @@ docker run -d --restart=unless-stopped \
   rancher/rancher:latest
 ```
 
-Once the docker is running, it takes few minutes to initialize the server. Once the server is started, access the rancher UI on https://<host or IP>:8443
+Once the docker is running, it takes few minutes to initialize the server. Once the server is started, access the rancher UI on https://[host or IP]:8443
 
 
 4. Get the cluster credentials
