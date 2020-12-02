@@ -1,5 +1,5 @@
 ---
-title: adarma Overview
+title: mastercard Overview
 sidebar_label: Overview
 ---
 
@@ -23,7 +23,7 @@ Steps:
 
 3.Setup AWS cloud credentials
     
-    Under profile, select "Cloud Credentials" and click on "Add Cloud Credentails". Populate the details of region, access key, secret key, credentails name and save it.
+    Under profile, select "Cloud Credentials" and click on "Add Cloud Credentials". Populate the details of region, access key, secret key, credentails name and save it.
     
 4.Create an ec2 node template.
 
