@@ -57,12 +57,15 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: require.resolve("./sidebars.auto.js"),
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
+  ],
+  plugins: [
+    'docusaurus-plugin-auto-sidebars',    
   ],
 };
