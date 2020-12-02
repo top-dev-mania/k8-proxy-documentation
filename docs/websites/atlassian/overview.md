@@ -6,7 +6,8 @@ sidebar_label: Overview
 see [Development Websites Dashboard for details](../../dashboards/websites/development.md)
 
 
-# Reverse proxy configuration for mariusztst.atlassian.net, os-summit.atlassian.net, glasswall.atlassian.net - 
+# Reverse proxy configuration JIRA websites
+Websites: mariusztst.atlassian.net, os-summit.atlassian.net, glasswall.atlassian.net - 
 
 ## Requirements
 
