@@ -269,6 +269,7 @@ module.exports = {
         "type": "category",
         "label": "Knowledge Base",
         "items": [
+            "kb/auto-sidebar",
             "kb/mdx",
             "kb/style-guide",
             "kb/website-checklist"
