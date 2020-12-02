@@ -7,7 +7,7 @@ see [Development Websites Dashboard for details](../../dashboards/websites/devel
 
 # Reverse proxy for filedrop website
 
-# File-drop website Proxy Setup on Kubernetes (k8-v01)
+File-drop website Proxy Setup on Kubernetes (k8-v01)
 
 ## How it works
 
