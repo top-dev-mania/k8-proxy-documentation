@@ -200,3 +200,11 @@ This is a caution
 This is a warning
 
 :::
+
+
+
+## Angle Brackets
+Docusaurus MD files are churned into HTML, and it uses strict XHTML for this.
+Any markup tag not closed will throw a build error.
+You can use angle brackets within script blocks, but not with out.
+Sumply use a replacement such as square brackers when needed
