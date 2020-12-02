@@ -1,0 +1,24 @@
+- dashboards: 
+  - Dashboards: 0
+  - client-welcome: Client Welcome
+  - websites: Websites
+
+- esxi: 
+  - ESXI: 3
+  - welcome: Welcome
+  - architecture: Architecture
+  - ovas: OVAs
+  - websites: Websites
+
+- flavors:
+  - Flavors: 2
+  - flavor-a: Flavor A
+  - flavor-a: Flavor E
+  - flavor-a: Flavor OVA
+
+- websites:
+  - Websites: 1
+
+- kb:
+  - Knowledge Base: 4
+
