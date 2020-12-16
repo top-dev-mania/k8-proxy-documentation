@@ -133,6 +133,11 @@ module.exports = {
                     },
                     {
                         "type": "category",
+                        "label": "plugins",
+                        "items": []
+                    },
+                    {
+                        "type": "category",
                         "label": "self-hosted",
                         "items": [
                             "websites/sharepoint/self-hosted/overview",
