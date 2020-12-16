@@ -128,17 +128,25 @@ module.exports = {
                         "type": "category",
                         "label": "cloud",
                         "items": [
-                            "websites/sharepoint/cloud/file-handler",
-                            "websites/sharepoint/cloud/overview"
+                            "websites/sharepoint/cloud/file-handler"
                         ]
                     },
                     {
                         "type": "category",
                         "label": "self-hosted",
                         "items": [
-                            "websites/sharepoint/self-hosted/http-module",
-                            "websites/sharepoint/self-hosted/manual-install",
-                            "websites/sharepoint/self-hosted/overview"
+                            "websites/sharepoint/self-hosted/overview",
+                            "websites/sharepoint/self-hosted/sp-ova-aws",
+                            "websites/sharepoint/self-hosted/sp-plugin",
+                            "websites/sharepoint/self-hosted/sp-vhd-to-ova",
+                            "websites/sharepoint/self-hosted/sp-vm-manual-install"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "web",
+                        "items": [
+                            "websites/sharepoint/web/overview"
                         ]
                     }
                 ]
@@ -224,23 +232,9 @@ module.exports = {
         "items": [
             {
                 "type": "category",
-                "label": "Architecture",
-                "items": [
-                    "esxi/architecture/overview"
-                ]
-            },
-            {
-                "type": "category",
                 "label": "OVAs",
                 "items": [
-                    "esxi/ovas/overview"
-                ]
-            },
-            {
-                "type": "category",
-                "label": "Welcome",
-                "items": [
-                    "esxi/welcome/welcome"
+                    "esxi/OVAs/overview"
                 ]
             },
             {
@@ -249,18 +243,32 @@ module.exports = {
                 "items": [
                     {
                         "type": "category",
-                        "label": "glasswall-solutions",
+                        "label": "OWASP",
                         "items": [
-                            "esxi/websites/glasswall-solutions/overview"
+                            "esxi/Websites/OWASP/overview"
                         ]
                     },
                     {
                         "type": "category",
-                        "label": "owasp",
+                        "label": "glasswall-solutions",
                         "items": [
-                            "esxi/websites/owasp/overview"
+                            "esxi/Websites/glasswall-solutions/overview"
                         ]
                     }
+                ]
+            },
+            {
+                "type": "category",
+                "label": "Welcome",
+                "items": [
+                    "esxi/Welcome/welcome"
+                ]
+            },
+            {
+                "type": "category",
+                "label": "Architecture",
+                "items": [
+                    "esxi/architecture/overview"
                 ]
             }
         ]
