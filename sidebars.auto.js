@@ -140,6 +140,7 @@ module.exports = {
                         "type": "category",
                         "label": "self-hosted",
                         "items": [
+                            "websites/sharepoint/self-hosted/export-ova-aws",
                             "websites/sharepoint/self-hosted/overview",
                             "websites/sharepoint/self-hosted/sp-ova-aws",
                             "websites/sharepoint/self-hosted/sp-plugin",
