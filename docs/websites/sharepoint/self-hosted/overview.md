@@ -20,7 +20,7 @@ see [Development Websites Dashboard for details](../../../dashboards/websites/de
 
 #### Downloads: 
 
-[OVA - Sharepoint 2019 + GW Plugin](https://s3.console.aws.amazon.com/s3/object/glasswall-sow-ova?region=eu-west-1&prefix=vms/sharepoint/sp-svr-plugin-vm.ova)
+[OVA - Sharepoint 2019 + GW Plugin](https://glasswall-sow-ova.s3-eu-west-1.amazonaws.com/vms/sharepoint/sp-svr-plugin-vm.ova)
 
 #### Credentials:
 
