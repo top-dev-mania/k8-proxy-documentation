@@ -143,7 +143,8 @@ module.exports = {
                             "websites/sharepoint/self-hosted/export-ova-aws",
                             "websites/sharepoint/self-hosted/overview",
                             "websites/sharepoint/self-hosted/sp-ova-aws",
-                            "websites/sharepoint/self-hosted/sp-plugin",
+                            "websites/sharepoint/self-hosted/sp-plugin-install",
+                            "websites/sharepoint/self-hosted/sp-plugin-uninstall",
                             "websites/sharepoint/self-hosted/sp-vhd-to-ova",
                             "websites/sharepoint/self-hosted/sp-vm-manual-install"
                         ]
