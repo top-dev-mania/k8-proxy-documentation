@@ -1,31 +1,12 @@
 ---
-title: Sharepoint Self-Hosted Plugin
-sidebar_label: Plugin
+title: Sharepoint Self-Hosted Plugin Uninstall
+sidebar_label: Plugin Uninstall
 ---
 
 ## Overview
 
 The Sharepoint Self-Hosted plugin allows to delegate all download and uploads activities in the SharePoint User Interface to the GlassWall Rebuild engine. This keeps the all sharepoint documents safe.
 
-[Plugin Brochure](https://github.com/k8-proxy/gp-sharepoint-plugins/blob/main/SelfHosted/doc/SharePointCloudPlugin-v1.pdf)
-
-## Installation Guide (Dev)
-
-[Watch the video](../../../../static/video/docs/websites/sharepoint/self-hosted/wsp-install.mp4)
-
-1. get the latest install and scripts by cloning the [Repo](https://github.com/k8-proxy/gp-sharepoint-plugins.git) 
-
-### Repository
-...
-
-### Automated Setup
-...
-
-### Manual Setup
-...
- 
-### Proxy Configuration
-...
 
 ## Removing File Handler V1 Plugin
 
