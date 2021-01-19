@@ -20,7 +20,7 @@ module.exports = {
       },
       items: [
         {
-          to: "docs/dashboards/websites/production",
+          to: "docs/dashboards/client-welcome/index",
           activeBasePath: "docs",
           label: "Documentation",
           position: "left",

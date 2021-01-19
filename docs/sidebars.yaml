@@ -4,21 +4,17 @@
   - websites: Websites
 
 - esxi: 
-  - ESXI: 3
+  - ESXI: 1
   - welcome: Welcome
   - architecture: Architecture
   - ovas: OVAs
   - websites: Websites
 
-- flavors:
-  - Flavors: 2
-  - flavor-a: Flavor A
-  - flavor-a: Flavor E
-  - flavor-a: Flavor OVA
-
+- aws: 
+  - AWS: 2
+  
 - websites:
-  - Websites: 1
+  - Websites: 3
 
 - kb:
   - Knowledge Base: 4
-

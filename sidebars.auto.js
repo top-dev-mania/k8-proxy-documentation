@@ -11,18 +11,179 @@ module.exports = {
                 "items": [
                     "dashboards/client-welcome/index"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "type": "category",
+        "label": "ESXI",
+        "items": [
             {
                 "type": "category",
-                "label": "Websites",
+                "label": "OVAs-creation",
                 "items": [
-                    "dashboards/websites/deployment-notes",
-                    "dashboards/websites/development",
-                    "dashboards/websites/flavors",
-                    "dashboards/websites/notassigned",
-                    "dashboards/websites/production"
+                    {
+                        "type": "category",
+                        "label": "FileDrop",
+                        "items": [
+                            "esxi/OVAs-creation/FileDrop/1_Creating_OVA",
+                            "esxi/OVAs-creation/FileDrop/2_Importing_OVA",
+                            "esxi/OVAs-creation/FileDrop/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "GovUK_Offline",
+                        "items": [
+                            "esxi/OVAs-creation/GovUK_Offline/1_Creating_OVA",
+                            "esxi/OVAs-creation/GovUK_Offline/2_Importing_OVA",
+                            "esxi/OVAs-creation/GovUK_Offline/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "HAProxyICAP",
+                        "items": [
+                            "esxi/OVAs-creation/HAProxyICAP/1_Creating_OVA",
+                            "esxi/OVAs-creation/HAProxyICAP/2_Importing_OVA",
+                            "esxi/OVAs-creation/HAProxyICAP/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "HAProxyWeb",
+                        "items": [
+                            "esxi/OVAs-creation/HAProxyWeb/1_Creating_OVA",
+                            "esxi/OVAs-creation/HAProxyWeb/2_Importing_OVA",
+                            "esxi/OVAs-creation/HAProxyWeb/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "ICAPClient",
+                        "items": [
+                            "esxi/OVAs-creation/ICAPClient/1_Creating_OVA",
+                            "esxi/OVAs-creation/ICAPClient/2_Importing_OVA",
+                            "esxi/OVAs-creation/ICAPClient/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "ICAPServer",
+                        "items": [
+                            "esxi/OVAs-creation/ICAPServer/1_Creating_OVA",
+                            "esxi/OVAs-creation/ICAPServer/2_Importing_OVA",
+                            "esxi/OVAs-creation/ICAPServer/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "LinuxDesktop",
+                        "items": [
+                            "esxi/OVAs-creation/LinuxDesktop/1_Creating_OVA",
+                            "esxi/OVAs-creation/LinuxDesktop/2_Importing_OVA",
+                            "esxi/OVAs-creation/LinuxDesktop/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "MinioServer_Offline",
+                        "items": [
+                            "esxi/OVAs-creation/MinioServer_Offline/1_Creating_OVA",
+                            "esxi/OVAs-creation/MinioServer_Offline/2_Importing_OVA",
+                            "esxi/OVAs-creation/MinioServer_Offline/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "Monitoring",
+                        "items": [
+                            {
+                                "type": "category",
+                                "label": "images",
+                                "items": []
+                            },
+                            "esxi/OVAs-creation/Monitoring/1_Create_OVA",
+                            "esxi/OVAs-creation/Monitoring/2_Importing_OVA",
+                            "esxi/OVAs-creation/Monitoring/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "ProxyRebuild",
+                        "items": [
+                            "esxi/OVAs-creation/ProxyRebuild/1_Creating_OVA",
+                            "esxi/OVAs-creation/ProxyRebuild/2_Importing_OVA",
+                            "esxi/OVAs-creation/ProxyRebuild/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "SharedStorage",
+                        "items": [
+                            "esxi/OVAs-creation/SharedStorage/1_Creating_OVA",
+                            "esxi/OVAs-creation/SharedStorage/2_Importing_OVA",
+                            "esxi/OVAs-creation/SharedStorage/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "SupportServer",
+                        "items": [
+                            "esxi/OVAs-creation/SupportServer/1_Creating_OVA",
+                            "esxi/OVAs-creation/SupportServer/2_Importing_OVA",
+                            "esxi/OVAs-creation/SupportServer/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "TrafficGen",
+                        "items": [
+                            {
+                                "type": "category",
+                                "label": "img",
+                                "items": []
+                            },
+                            "esxi/OVAs-creation/TrafficGen/1_Creating_OVA",
+                            "esxi/OVAs-creation/TrafficGen/2_Importing_OVA",
+                            "esxi/OVAs-creation/TrafficGen/3_OVA_Usage"
+                        ]
+                    },
+                    {
+                        "type": "category",
+                        "label": "Wordpress",
+                        "items": [
+                            "esxi/OVAs-creation/Wordpress/1_Creating_OVA",
+                            "esxi/OVAs-creation/Wordpress/2_Importing_OVA",
+                            "esxi/OVAs-creation/Wordpress/3_OVA_Usage"
+                        ]
+                    }
                 ]
-            }
+            },
+            "esxi/1.welcome",
+            "esxi/2.setup-1",
+            "esxi/3.setup-2",
+            "esxi/4.Videos-For-OVAs",
+            "esxi/5.Flow-Diagrams",
+            "esxi/6.Getting-Started",
+            "esxi/7.Monitoring"
+        ]
+    },
+    {
+        "type": "category",
+        "label": "AWS",
+        "items": [
+            "aws/auto-sidebar"
+        ]
+    },
+    {
+        "type": "category",
+        "label": "Knowledge Base",
+        "items": [
+            "kb/auto-sidebar",
+            "kb/mdx",
+            "kb/style-guide",
+            "kb/website-checklist"
         ]
     },
     {
@@ -133,11 +294,6 @@ module.exports = {
                     },
                     {
                         "type": "category",
-                        "label": "plugins",
-                        "items": []
-                    },
-                    {
-                        "type": "category",
                         "label": "self-hosted",
                         "items": [
                             "websites/sharepoint/self-hosted/export-ova-aws",
@@ -164,129 +320,6 @@ module.exports = {
                     "websites/ukzones/overview"
                 ]
             }
-        ]
-    },
-    {
-        "type": "category",
-        "label": "Flavors",
-        "items": [
-            {
-                "type": "category",
-                "label": "Flavor OVA",
-                "items": [
-                    "flavors/flavor-a/automated-setup",
-                    "flavors/flavor-a/faq",
-                    "flavors/flavor-a/manual-setup-aws",
-                    "flavors/flavor-a/overview",
-                    {
-                        "type": "category",
-                        "label": "release-notes",
-                        "items": [
-                            {
-                                "type": "category",
-                                "label": "0_x",
-                                "items": [
-                                    "flavors/flavor-a/release-notes/0_x/0_1"
-                                ]
-                            },
-                            "flavors/flavor-a/release-notes/history"
-                        ]
-                    },
-                    "flavors/flavor-a/technical-architecture",
-                    "flavors/flavor-a/testing"
-                ]
-            },
-            {
-                "type": "category",
-                "label": "flavor-e",
-                "items": [
-                    "flavors/flavor-e/manual-setup-aws"
-                ]
-            },
-            {
-                "type": "category",
-                "label": "flavor-ova",
-                "items": [
-                    "flavors/flavor-ova/automated-setup",
-                    "flavors/flavor-ova/faq",
-                    "flavors/flavor-ova/manual-setup-aws",
-                    "flavors/flavor-ova/manual-setup-azure",
-                    "flavors/flavor-ova/overview",
-                    {
-                        "type": "category",
-                        "label": "release-notes",
-                        "items": [
-                            {
-                                "type": "category",
-                                "label": "0_x",
-                                "items": [
-                                    "flavors/flavor-ova/release-notes/0_x/0_1"
-                                ]
-                            },
-                            "flavors/flavor-ova/release-notes/history"
-                        ]
-                    },
-                    "flavors/flavor-ova/technical-architecture",
-                    "flavors/flavor-ova/testing"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "category",
-        "label": "ESXI",
-        "items": [
-            {
-                "type": "category",
-                "label": "OVAs",
-                "items": [
-                    "esxi/OVAs/overview"
-                ]
-            },
-            {
-                "type": "category",
-                "label": "Websites",
-                "items": [
-                    {
-                        "type": "category",
-                        "label": "OWASP",
-                        "items": [
-                            "esxi/Websites/OWASP/overview"
-                        ]
-                    },
-                    {
-                        "type": "category",
-                        "label": "glasswall-solutions",
-                        "items": [
-                            "esxi/Websites/glasswall-solutions/overview"
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "category",
-                "label": "Welcome",
-                "items": [
-                    "esxi/Welcome/welcome"
-                ]
-            },
-            {
-                "type": "category",
-                "label": "Architecture",
-                "items": [
-                    "esxi/architecture/overview"
-                ]
-            }
-        ]
-    },
-    {
-        "type": "category",
-        "label": "Knowledge Base",
-        "items": [
-            "kb/auto-sidebar",
-            "kb/mdx",
-            "kb/style-guide",
-            "kb/website-checklist"
         ]
     }
 ]
