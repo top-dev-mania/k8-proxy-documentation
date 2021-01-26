@@ -273,7 +273,7 @@ echo -n 'your_password' | openssl md5
 <user-mapping>
     <authorize
             username="glasswall"
-            password="cac932abcf03019cd760951f23c6b079"
+            password="md5 hashed value"
             encoding="md5">
 
         <connection name="Ubuntu20.04-Server">
